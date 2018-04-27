@@ -1,3 +1,50 @@
 api_homepage:
     path:     /
     defaults: { _controller: ApiBundle:Default:index }
+
+new_bab:
+    path:     /newBab
+    defaults: { _controller: ApiBundle:Babysitting:newBab }
+
+find_bab:
+    path:     /findBab/{id}/{date}
+    defaults: { _controller: ApiBundle:Babysitting:findBab }
+
+all_bab:
+    path:     /allBab/{id}
+    defaults: { _controller: ApiBundle:Babysitting:allBab }
+
+update_bab:
+    path:     /updateBab/{id}
+    defaults: { _controller: ApiBundle:Babysitting:updateBab }
+
+new_cov:
+    path:     /newCov
+    defaults: { _controller: ApiBundle:Covoiturage:newCov }
+
+find_cov:
+    path:     /findCov/{id}/{date}
+    defaults: { _controller: ApiBundle:Covoiturage:findCov }
+
+all_cov:
+    path:     /allCov/{id}
+    defaults: { _controller: AkApiBundle:Covoiturage:allCov }
+new_voit:
+    path:     /newVoit
+    defaults: { _controller: ApiBundle:Car:newVoit }
+
+find_voit:
+    path:     /findVoit/{id}
+    defaults: { _controller: ApiBundle:Car:findVoit }
+
+all_voit:
+    path:     /allVoit
+    defaults: { _controller: ApiBundle:Car:allVoit }
+
+update_voit:
+    path:     /updateVoit
+    defaults: { _controller: ApiBundle:Car:updateVoit }
+
+delete_voit:
+    path:     /deleteVoit
+    defaults: { _controller: ApiBundle:Car:deleteVoit }

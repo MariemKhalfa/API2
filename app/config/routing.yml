@@ -1,6 +1,6 @@
 api:
     resource: "@ApiBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /api
 
 back_office:
     resource: "@BackOfficeBundle/Resources/config/routing.yml"
