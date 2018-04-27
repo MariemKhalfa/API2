@@ -32,7 +32,7 @@ class CarController extends Controller
     public function findVoitAction($id)
     {
         $voitures=$this->getDoctrine()->getManager()
-            ->getRepository('ApiBundle:car')
+            ->getRepository('ApiBundle:Car')
             ->MyCars($id);
         $serializer=new Serializer([new ObjectNormalizer()]);
         $formatted=$serializer->normalize($voitures);
@@ -42,7 +42,7 @@ class CarController extends Controller
     public function allVoitAction()
     {
         $voitures=$this->getDoctrine()->getManager()
-            ->getRepository('ApiBundle:car')
+            ->getRepository('ApiBundle:Car')
             ->findAll();
         $serializer=new Serializer([new ObjectNormalizer()]);
         $formatted=$serializer->normalize($voitures);
