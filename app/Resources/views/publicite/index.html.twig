@@ -1,0 +1,52 @@
+{% extends 'backBase.html.twig' %}
+
+{% block body %}
+    <h1>Publicites list</h1>
+
+<div class="panel panel-default card-view">
+    <table class="jsgrid-table">
+        <tbody>
+        <tr class="jsgrid-header-row">
+
+            <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 100px;"></th>
+            <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 100px;">Id</th>
+            <th class="jsgrid-header-cell jsgrid-align-right jsgrid-header-sortable" style="width: 250px;">Intitule</th>
+            <th class="jsgrid-header-cell jsgrid-header-sortable" style="width: 250px;">Image Publicité</th>
+            <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 250px;">Ensegne</th>
+            <th class="jsgrid-header-cell jsgrid-align-center jsgrid-header-sortable" style="width: 200px;">Actions</th>
+
+
+            <th class="jsgrid-header-cell jsgrid-control-field jsgrid-align-center" style="width: 50px;">
+
+            </th>
+        <tbody>
+        {% for publicite in publicites %}
+            <tr>
+                <td></td>
+                <td><a href="{{ path('publicite_show', { 'id': publicite.id }) }}">{{ publicite.id }}</a></td>
+                <td>{{ publicite.intitule }}</td>
+                <td><a href="{{ path('promotions_show', { 'id': publicite.id }) }}"><img style="width:60px " src="{{ asset('uploads/brochures/'~publicite.ImagePub) }}"></a></td>
+                <td>{{ publicite.nomEnsegne }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('publicite_show', { 'id': publicite.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('publicite_edit', { 'id': publicite.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+
+</div>
+    <ul>
+        <li>
+            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('publicite_new') }}">Create a new publicite</a>
+        </li>
+    </ul>
+{% endblock %}

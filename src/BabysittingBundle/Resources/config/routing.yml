@@ -1,0 +1,48 @@
+babysitting_homepage:
+    path:     /
+    defaults: { _controller: BabysittingBundle:Default:index }
+
+ajouter_babysitting:
+    path:     /ajouterBabysitting
+    defaults: { _controller: BabysittingBundle:Babysitting:ajouterBabysitting }
+
+modifier_babysitting:
+    path:     /modifierBabysitting/{id}
+    defaults: { _controller: BabysittingBundle:Babysitting:modifierBabysitting }
+
+lister_mes_babysittings:
+    path:     /listerMesBabysittings
+    defaults: { _controller: BabysittingBundle:Babysitting:listerMesBabysittings }
+
+lister_des_babysittings:
+    path:     /listerDesBabysittings
+    defaults: { _controller: BabysittingBundle:Babysitting:listerDesBabysittings }
+
+historique_babysitting:
+    path:     /historiqueBabysitting
+    defaults: { _controller: BabysittingBundle:Babysitting:historiqueBabysitting }
+
+chercher_babysitting:
+    path:     /chercherBabysitting
+    defaults: { _controller: BabysittingBundle:Babysitting:chercherBabysitting }
+
+distance_babysitting:
+    path:     /distanceBabysitting
+    defaults: { _controller: BabysittingBundle:Babysitting:distanceBabysitting }
+
+details_babysitting:
+    path:     /detailsBabysitting/{id}
+    defaults: { _controller: BabysittingBundle:Babysitting:detailsBabysitting }
+
+
+supprimer_babysitting:
+    path:     /supprimerBabysitting/{id}
+    defaults: { _controller: BabysittingBundle:Babysitting:supprimerBabysitting }
+
+list_babysittings_admin:
+    path:     /listBabysittingsAdmin
+    defaults: { _controller: BabysittingBundle:Babysitting:listBabysittingsAdmin }
+
+list_babysitters_admin:
+    path:     /listBabysittersAdmin
+    defaults: { _controller: BabysittingBundle:Babysitting:listBabysittersAdmin }

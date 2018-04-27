@@ -1,0 +1,4 @@
+services:
+#    e_learning.example:
+#        class: ELearningBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

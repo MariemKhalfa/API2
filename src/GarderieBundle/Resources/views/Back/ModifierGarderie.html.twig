@@ -1,0 +1,101 @@
+{% extends 'GarderieBundle::GarderieBase.html.twig' %}
+{% block container %}
+    <div class="ht__bradcaump__area">
+        <div class="ht__bradcaump__container">
+            <img src="{{ asset('images/bg-png/6.png') }}" alt="bradcaump images">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="bradcaump__inner text-center">
+                            <h2 class="bradcaump-title">Espace Garderie</h2>
+                            <nav class="bradcaump-inner">
+                                <a class="breadcrumb-item" href="index-2.html">Home</a>
+                                <span class="brd-separetor"><img src="{{ asset('images/icons/brad.png') }}" alt="separator images"></span>
+                                <span class="breadcrumb-item active">Modifier Garderie</span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {{ form_start(form) }}
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+    <script src="{{ asset('jquery-3.2.1.js') }}"></script>
+    <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+    <div class="col-lg-6">
+        <div class="card">
+            <div class="card-header">
+                <h4 class="bradcaump-title">Modifier Garderie</h4>
+            </div>
+            <div class="card-body card-block">
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Nom</label></div>
+                    <div class="col-12 col-md-9">{{ form_widget(form.nom,{attr: {class: 'form-control'} }) }}</div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Adresse</label></div>
+                    <div class="col-12 col-md-9">{{ form_widget(form.adresse,{attr: {class: 'form-control'} }) }}</div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Telephone</label></div>
+                    <div class="col-12 col-md-9">{{ form_widget(form.telephone,{attr: {class: 'form-control'} }) }}</div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Image</label></div>
+                    <div class="col-12 col-md-9">{{ form_widget(form.image,{attr: {class: 'form-control'} }) }}</div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Description</label></div>
+                    <div class="col-12 col-md-9">{{ form_widget(form.descriptif,{attr: {class: 'form-control'} }) }}</div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Langues</label></div>
+                    <div class="col-12 col-md-9">{{ form_widget(form.langues,{attr: {class: 'form-control'} }) }}</div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Date_ouverture</label></div>
+                    <div class="col-12 col-md-9">{{ form_widget(form.dateOuverture,{attr: {class: 'form-control'} }) }}</div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Date_fermeture</label></div>
+                    <div class="col-12 col-md-9">{{ form_widget(form.dateFermeture,{attr: {class: 'form-control'} }) }}</div>
+                </div>
+
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Cout</label></div>
+                    <div class="col-12 col-md-9">{{ form_widget(form.cout,{attr: {class: 'form-control'} }) }}</div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Proprietaire</label></div>
+                    <div class="col-12 col-md-9">{{ form_widget(form.proprietaire,{attr: {class: 'form-control'} }) }}</div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Heure_deb</label></div>
+                    <div class="col-12 col-md-9">{{ form_widget(form.heureDeb,{attr: {class: 'form-control'} }) }}</div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Heure_fin</label></div>
+                    <div class="col-12 col-md-9">{{ form_widget(form.heureFin,{attr: {class: 'form-control'} }) }}</div>
+                </div>
+                <div class="row form-group">
+                    <div class="col col-md-3"><label for="text-input" class=" form-control-label">Email</label></div>
+                    <div class="col-12 col-md-9">{{ form_widget(form.email,{attr: {class: 'form-control'} }) }}</div>
+                </div>
+
+
+
+                <div class="card-footer">
+                    {{ form_widget(form.Modifier,{attr: {class: 'dcare__btn'}}) }}
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+    {{ form_end(form) }}
+{% endblock  %}

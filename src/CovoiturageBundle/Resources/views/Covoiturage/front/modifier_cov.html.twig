@@ -1,0 +1,126 @@
+{% extends "base.html.twig" %}
+ {% block container %}
+     <!-- Start Contact Form -->
+     <section>
+     <div class="container">
+         <div class="section-content">
+             <div class="row">
+                 <div class="container">
+                     <h2 class="text-theme-color-sky line-bottom"><span class="text-theme-color-red">Modification de covoiturage</span>
+                     </h2>
+                     <h4 class="text-theme-color-blue">Vous êtes sur le point de modifier votre covoiturage</h4>
+                     <p>En remplissant le formulaire ci-dessous, toutes les informations pécédentes seront changées.</p>
+                     <p>Veuillez vérifier vos changements avant de confirmer la modification .</p>
+                 </div>
+
+             </div>
+         </div>
+     </div>
+
+     {{ form_start(form) }}
+
+     <section class="htc__checkout bg--white ">
+         <!-- Checkout Section Start-->
+         <div class="checkout-section">
+             <div class="container">
+                 <div class="row">
+                     <div class="col-lg-8 col-12 ">
+                         <a class="accordion-head" data-toggle="collapse" data-parent="#checkout-accordion"
+                            href="#checkout-method"> {{ tit }}</a>
+
+                         <div id="checkout-method" class="collapse show">
+                             <div class="checkout-method accordion-body fix">
+                                 <form action="#" class="">
+
+
+                                     {# <div class=" row form-group">
+                                          <label for="text-input" class=" form-control-label">Date Covoiturage </label>
+                                       <div class='input-group date'
+                                            id='datetimepicker1'>{{ form_widget(form.date,{attr: {class: 'form-control'} }) }}
+                                           <span class="input-group-addon">
+                                                 <span class="fa fa-calendar"></span>
+                                           </span></div>
+                                       </div>#}
+
+
+                                     <div class="row form-group">
+                                         <div class="col col-md-4">
+                                             <label for="text-input" class=" form-control-label">Date </label>
+                                         </div>
+                                         <div class="form-group">
+                                             <div class='input-group date' id='timepicker'>{{ form_widget(form.date,{attr: {class: 'form-control'} }) }}
+                                                 <span class="input-group-addon">
+                                                                     <span class="fa fa-calendar"></span>
+                                                             </span>
+                                             </div>
+                                         </div>
+                                     </div>
+                                     <div class="row form-group">
+                                         <div class="col col-md-4">
+                                             <label for="text-input" class=" form-control-label">Heure de départ</label>
+                                         </div>
+                                         <div class="form-group">
+                                             <div class='input-group date' id='timepicker'>{{ form_widget(form.heureDep,{attr: {class: 'form-control'} }) }}
+                                                 <span class="input-group-addon">
+                                                                     <span class="fa fa-clock-o"></span>
+                                                             </span>
+                                             </div>
+                                         </div>
+                                     </div>
+
+                                     <div class="row form-group">
+
+                                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Départ </label>
+                                         </div>
+
+                                         <div class="col-12 col-md-9">{{ form_widget(form.lieuDep,{attr: {class: 'form-control'} }) }}
+
+
+                                         </div>
+                                     </div>
+                                     <div class="row form-group">
+                                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Destination </label>
+                                         </div>
+
+                                         <div class="col-12 col-md-9">{{ form_widget(form.lieuDest,{attr: {class: 'form-control'} }) }}
+
+
+                                         </div>
+                                     </div>
+
+
+                                     <div class="row form-group">
+                                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Places  </label></div>
+                                         <div class="col-12 col-md-9">{{ form_widget(form.nbPlaces,{attr: {class: 'form-control'} }) }}</div>
+                                     </div>
+
+                                     <div class="row form-group">
+                                         <div class="col col-md-3"><label for="text-input" class=" form-control-label">Description  </label></div>
+                                         <div class="col-12 col-md-9">{{ form_widget(form.description,{attr: {class: 'form-control'} }) }}</div>
+                                         <br><br><br>
+                                     </div>
+                                     <div class="input-box col-md-6 col-12 mb--20">
+                                         {{ form_widget(form.Modifier,{attr: {class: 'dcare__btn'}}) }}
+
+                                     </div>
+
+
+                                 </form>
+
+
+                                 {{ form_end(form) }}
+                             </div>
+                         </div>
+
+
+
+                     </div>
+                 </div>
+             </div>
+
+         </div><!-- Checkout Section End-->
+     </section>
+
+     <!-- Billing Method -->
+     <!-- End Contact Form -->
+ {% endblock %}

@@ -1,0 +1,43 @@
+{% extends 'backBase.html.twig' %}
+{% block body %}
+    <div class="col-sm-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">Enseignant</h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <code>La table des Activités :</code>
+                    <a href="" class="btn" value="Ajouter un enseignant" style="color: #0e3e70;">Modifier une activité </a>
+                    <div class="table-wrap mt-40">
+                        <div class="table-responsive">
+                            <table class="table table-hover table-bordered mb-0">
+
+                                <tbody>
+                                <div class="container">
+
+                                    <a href="{{ absolute_url(asset('')) }}app_dev.php/activite/create" class="btn btn-primary">Retour</a>
+                                    <h3> <br> MODIFIER ACTIVITE</h3>
+                                    {{ form_start(form) }}
+                                    {{ form_widget(form) }}
+                                    {{ form_end(form) }}
+                                    </tr>
+
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {% block java %}
+        <script src="{{ asset('vendors/bower_components/peity/jquery.peity.min.js') }}"></script>
+        <script src="{{ asset('dist/js/peity-data.js') }}"></script>
+
+    {% endblock %}
+{% endblock %}

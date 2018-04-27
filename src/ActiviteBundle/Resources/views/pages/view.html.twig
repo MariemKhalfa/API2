@@ -1,0 +1,29 @@
+
+
+<div class="container">
+
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+
+    <h3> <br> VOIR ACTIVITES</h3>
+    <div class="list-group">
+        <a href="#" class="list-group-item list-group-item-action active">
+            Activités
+        </a>
+
+        {{ form_start(form) }}
+        <div style="display: none">{{ form_widget(form.id) }}</div>{{ form_widget(form.rating) }}{{ form_widget(form.Noter,{attr: {class:'dcare__btn btn__f6f6f6'} }) }}
+        {{ form_end(form) }}
+        <p class="list-group-item list-group-item-action">{{ activite.type }}        </p>
+        <p class="list-group-item list-group-item-action">{{ activite.adresse }}        </p>
+        <p class="list-group-item list-group-item-action">{{ activite.date | date('d-m-y') }}        </p>
+        <p class="list-group-item list-group-item-action">{{ activite.heure | date('H:i') }}        </p>
+        <p class="list-group-item list-group-item-action">{{ activite.agemin }}        </p>
+        <p class="list-group-item list-group-item-action">
+            <a href="{{ absolute_url(asset('')) }}app_dev.php/activite/view" class="btn btn-success">Retour</a>
+        </p>
+
+    </div>
+

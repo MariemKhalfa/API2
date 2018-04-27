@@ -1,0 +1,75 @@
+{% extends 'backBase.html.twig' %}
+
+{% block body %}
+    <h1>Coupon</h1>
+<div class="panel panel-default card-view">
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ coupon.id }}</td>
+            </tr>
+            <tr>
+                <th>Intitule</th>
+                <td>{{ coupon.intitule }}</td>
+            </tr>
+            <tr>
+                <th>Imagecoupon</th>
+                <td><img style="width:60px " src="{{ asset('uploads/brochures/'~coupon.imageCoupon) }}"</td>
+            </tr>
+            <tr>
+                <th>Ensegne</th>
+                <td>{{ coupon.ensegne }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ coupon.description }}</td>
+            </tr>
+            <tr>
+                <th>Datedebut</th>
+                <td>{% if coupon.dateDebut %}{{ coupon.dateDebut|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Datefin</th>
+                <td>{% if coupon.dateFin %}{{ coupon.dateFin|date('Y-m-d') }}{% endif %}</td>
+            </tr>
+            <tr>
+                <th>Valeur</th>
+                <td>{{ coupon.valeur }}</td>
+            </tr>
+            <tr>
+                <th>Code promo</th>
+                <td>{{ coupon.codePromo }}</td>
+            </tr>
+            <tr>
+                <th>Time left </th>
+                <td>    <script language="JavaScript">
+                        TargetDate = "{% if coupon.dateFin %}{{ coupon.dateFin|date('Y-m-d') }}{% endif %}";
+                        BackColor = "palegreen";
+                        ForeColor = "red";
+                        CountActive = true;
+                        CountStepper = -1;
+                        LeadingZero = true;
+                        DisplayFormat = "%%D%% Days, %%H%% Hours, %%M%% Minutes, %%S%% Seconds.";
+                        FinishMessage = "Coupon périmé !!! ";
+                    </script>
+                    <script language="JavaScript" src="https://scripts.hashemian.com/js/countdown.js"></script></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('coupons_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('coupons_edit', { 'id': coupon.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+</div>
+{% endblock %}

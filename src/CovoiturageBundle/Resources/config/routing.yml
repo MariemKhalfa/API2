@@ -1,0 +1,78 @@
+covoiturage_homepage:
+    path:     /
+    defaults: { _controller: CovoiturageBundle:Default:index }
+
+ajout_voiture:
+    path:     /ajoutVoiture
+    defaults: { _controller: CovoiturageBundle:Voiture:ajoutVoiture }
+
+detail_voiture:
+    path:     /detailVoiture
+    defaults: { _controller: CovoiturageBundle:Voiture:detailVoiture }
+
+supprimer_voiture:
+    path:     /supprimerVoiture
+    defaults: { _controller: CovoiturageBundle:Voiture:supprimerVoiture }
+
+modifier_voiture:
+    path:     /modifierVoiture
+    defaults: { _controller: CovoiturageBundle:Voiture:modifierVoiture }
+
+ajouter_cov:
+    path:     /ajouterCov
+    defaults: { _controller: CovoiturageBundle:Covoiturage:ajouterCov }
+
+modifier_cov:
+    path:     /modifierCov/{id}
+    defaults: { _controller: CovoiturageBundle:Covoiturage:modifierCov }
+
+lister_mes_cov:
+    path:     /listerMesCov
+    defaults: { _controller: CovoiturageBundle:Covoiturage:listerMesCov }
+
+lister_des_cov:
+    path:     /listerDesCov
+    defaults: { _controller: CovoiturageBundle:Covoiturage:listerDesCov }
+
+historique_cov:
+    path:     /historiqueCov
+    defaults: { _controller: CovoiturageBundle:Covoiturage:historiqueCov }
+
+chercher_cov:
+    path:     /chercherCov
+    defaults: { _controller: CovoiturageBundle:Covoiturage:chercherCov }
+
+matching_cov:
+    path:     /matchingCov
+    defaults: { _controller: CovoiturageBundle:Covoiturage:matchingCov }
+
+distance_cov:
+    path:     /distanceCov
+    defaults: { _controller: CovoiturageBundle:Covoiturage:distanceCov }
+
+details_cov:
+    path:     /detailsCov/{id}
+    defaults: { _controller: CovoiturageBundle:Covoiturage:detailsCov }
+
+reserver_cov:
+    path:     /reserverCov/{id}
+    defaults: { _controller: CovoiturageBundle:Covoiturage:reserverCov }
+
+details_cov:
+    path:     /detailsCov/{id}
+    defaults: { _controller: CovoiturageBundle:Covoiturage:detailsCov }
+
+reserver_cov:
+    path:     /reserverCov/{id}
+    defaults: { _controller: CovoiturageBundle:Covoiturage:reserverCov }
+supprimer_cov:
+    path:     /supprimerCov/{id}
+    defaults: { _controller: CovoiturageBundle:Covoiturage:supprimerCov }
+
+list_cov_admin:
+    path:     /listCovAdmin
+    defaults: { _controller: CovoiturageBundle:Covoiturage:listCovAdmin }
+
+list_covoitureurs_admin:
+    path:     /listCovoitureursAdmin
+    defaults: { _controller: CovoiturageBundle:Covoiturage:listCovoitureursAdmin }

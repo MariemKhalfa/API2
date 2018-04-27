@@ -1,0 +1,76 @@
+medecin_homepage:
+    path:     /
+    defaults: { _controller: MedecinBundle:Default:index }
+medecin_ajout:
+    path:     /Ajoutmedecin
+    defaults: { _controller: MedecinBundle:Medecin:ajout }
+medecin_liste:
+    path:     /listesmedecins
+    defaults: { _controller: MedecinBundle:Medecin:list }
+medecin_modifier:
+    path:     /Modifiermedecins
+    defaults: { _controller: MedecinBundle:Medecin:Update }
+medecin_supprimer:
+    path:     /Supprimermedecin
+    defaults: { _controller: MedecinBundle:Medecin:Delete }
+demande_afficher2:
+    path:     /listesgarderiesFront
+    defaults: { _controller: MedecinBundle:Medecin:listeDemandes}
+demande_supprimer2:
+    path:     /SupprimerDemande
+    defaults: { _controller: MedecinBundle:Medecin:DeleteDemande}
+demande_accepter2:
+    path:     /AccepterDemande
+    defaults: { _controller: MedecinBundle:Medecin:AccepterDemande}
+garderie_listeFront2:
+    path:     /garderieList
+    defaults: { _controller: MedecinBundle:Medecin:listFront }
+garderie_details:
+    path:     /garderiedetails
+    defaults: { _controller: MedecinBundle:Medecin:DetailsGarderies }
+garderie_inscription:
+    path:     /garderieinscription
+    defaults: { _controller: MedecinBundle:Medecin:Inscription }
+garderie_meilleur:
+    path:     /garderieMeilleur
+    defaults: { _controller: MedecinBundle:Medecin:RatingGarderies}
+garderie_statistiques2:
+    path:     /StatistiquesGarderie
+    defaults: { _controller: MedecinBundle:Medecin:Statistiques }
+medecin_affichageFront:
+    path:     /affichageFront
+    defaults: { _controller: MedecinBundle:Medecin:listMedecinFront }
+medecin_details:
+    path:     /detailsmedecin
+    defaults: { _controller: MedecinBundle:Medecin:DetailsMedecins }
+garderie_notif2:
+    path:     /notif2
+    defaults: { _controller: MedecinBundle:Medecin:notif}
+garderie_rechercher:
+    path:     /rechercher
+    defaults: { _controller: MedecinBundle:Medecin:rechercher}
+medecin_rechercher:
+    path:     /rechercherMedecin
+    defaults: { _controller: MedecinBundle:Medecin:rechercherMedecin}
+garderie_afficher6:
+    path:     /garderiesAll
+    defaults: { _controller: MedecinBundle:Medecin:allall}
+garderie_rate:
+    path:     /garderiesRating
+    defaults: { _controller: MedecinBundle:Medecin:new}
+garderie_inscription5:
+    path:     /garderiesInscription5
+    defaults: { _controller: MedecinBundle:Medecin:new1}
+ajouter_publication:
+    path:     /addPublication
+    defaults: { _controller: MedecinBundle:Publication:ajoutPublication}
+ajouter_commentaire:
+    path:     /addCommentaire
+    defaults: { _controller: MedecinBundle:Publication:ajoutCommentaire}
+rechercher_Medecin:
+    path:     /rechercherMedecin22
+    defaults: { _controller: MedecinBundle:Medecin:allallMedecins}
+medecin2_details:
+    path:     /detailsmedecin5
+    defaults: { _controller: MedecinBundle:Medecin:DetailsMedecins5 }
+

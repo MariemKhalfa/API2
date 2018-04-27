@@ -1,0 +1,12 @@
+jeux_homepage:
+    path:     /jeux
+    defaults: { _controller: JeuxBundle:Default:index }
+
+jeu_memoire:
+    path:     /jeu/memory
+    defaults: { _controller: JeuxBundle:Jeux:memory}
+
+
+jeu_math:
+    path:     /jeu/mathquiz
+    defaults: { _controller: JeuxBundle:Jeux:math }

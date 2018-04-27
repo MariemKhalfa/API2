@@ -1,0 +1,24 @@
+coupons_index:
+    path:     /coupons
+    defaults: { _controller: "BackOfficeBundle:coupons:index" }
+    methods:  GET
+
+coupons_show:
+    path:     coupons/{id}/show
+    defaults: { _controller: "BackOfficeBundle:coupons:show" }
+    methods:  GET
+
+coupons_new:
+    path:     coupons/new
+    defaults: { _controller: "BackOfficeBundle:coupons:new" }
+    methods:  [GET, POST]
+
+coupons_edit:
+    path:     coupons/{id}/edit
+    defaults: { _controller: "BackOfficeBundle:coupons:edit" }
+    methods:  [GET, POST]
+
+coupons_delete:
+    path:     coupons/{id}/delete
+    defaults: { _controller: "BackOfficeBundle:coupons:delete" }
+    methods:  DELETE

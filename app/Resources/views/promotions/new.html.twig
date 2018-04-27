@@ -1,0 +1,18 @@
+{% extends 'backBase.html.twig' %}
+
+{% block body %}
+<div class="panel panel-default card-view">
+    <h1>Promotion creation</h1>
+
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" value="Create" />
+    {{ form_end(form) }}
+
+    <ul>
+        <li>
+            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('promotions_index') }}">Back to the list</a>
+        </li>
+    </ul>
+</div>
+{% endblock %}

@@ -1,0 +1,3 @@
+recette_homepage:
+    path:     /es
+    defaults: { _controller: RecetteBundle:Default:index }

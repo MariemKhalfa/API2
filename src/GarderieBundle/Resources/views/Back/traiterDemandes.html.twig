@@ -1,0 +1,78 @@
+{% extends 'backBase.html.twig' %}
+{% block btitle %}
+
+
+    <div class="row heading-bg bg-blue">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h5 class="txt-light">All For Kids admin</h5>
+        </div>
+
+        <!-- Breadcrumb -->
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            <ol class="breadcrumb">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="#"><span>Garderies</span></a></li>
+                <li class="active"><span>Liste des demandes</span></li>
+            </ol>
+        </div>
+        <!-- /Breadcrumb -->
+
+    </div>
+{% endblock %}
+{% block body %}
+
+
+            <div class="card">
+                <div class="card-header">
+
+                </div>
+
+              </div></div><div class="row"><div class="col-sm-12"><table id="bootstrap-data-table" class="table table-striped table-bordered dataTable no-footer" role="grid" aria-describedby="bootstrap-data-table_info">
+                    <thead>
+                    <tr role="row">
+
+
+                        <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">id</th>
+                        <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Etat</th>
+
+                        <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">NomGarderie</th>
+
+                        <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Accepter</th>
+                        <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Annuler</th>
+
+
+                    </tr>    </thead>
+                    <tbody>
+
+
+
+
+
+
+
+
+
+                    <tbody>
+                    {% for m in demande %}
+                        <tr>
+                            <td>{{ m.id}}</td>
+                            <td>{{ m.etat }}</td>
+                            <td>{{ m.idGarderie.nom}}</td>
+
+
+
+                            <td> <a  class='btn btn-primary btn-success' href="{{ path('demande_accepter2',{'id':m.id}) }}" >Accepter </a></td>
+                            <td> <a  class='btn btn-info' href="{{ path('demande_supprimer2',{'id':m.id}) }}" >Annuler </a></td>
+
+                        </tr>
+                    {% endfor %}
+
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+
+
+{% endblock %}

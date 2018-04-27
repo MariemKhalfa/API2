@@ -1,0 +1,65 @@
+{% extends "base.html.twig" %}
+ {% block container %}
+
+     <section class="junior__welcome__area bg-image--26">
+         <div class="container">
+             <div class="row">
+                 <div class="col-lg-12">
+                     <div class="section__title text-center">
+                         <h2 class="title__line"><span class="text-theme-color-blue">Recherche covoiturage </span></h2>
+                         <p>Trouver un covoiturage pour vos enfants est
+                             désormais un jeu d'enfants!</p>
+                     </div>
+                 </div>
+             </div>
+             <div class="row jn__welcome__wrapper align-items-center">
+                 <div class="col-md-12 col-lg-6 col-sm-12">
+                     <div class="welcome__juniro__inner">
+                         <h3>Covoiturage <span class="theme-color">All</span><span>For</span>Kids</h3>
+                         <p>All For Kids est l'unique plateforme en Tunisie destinée aux parents qui veulent
+                             proposer des covoiturages pour des enfants et qui cherchent à leur tour des covoiturages
+                             pour leurs enfants.</p>
+                         <div class="single__widget search">
+                             <h4>Trouver</h4>
+                             <form action="#">
+                                 <input type="text" id="adresse" name="adresse" placeholder="adresse">
+
+                             </form>
+                         </div>
+                         <div class="wel__btn">
+                             <a class="dcare__btn" href="{{ path('chercher_cov') }}"><span class="fa fa-search"></span></a>
+                         </div>
+
+                             <table border="0px">
+                                 {% for c in cov  %}
+                                     <tr>
+                                         <td>Titre</td>
+                                         <td>Date</td>
+                                         <td>Heure départ</td>
+                                         <td>Lieu départ</td>
+                                         <td>Destination </td>
+
+                                     </tr>
+
+                                     <tr>
+                                         <td>{{ c.titre }}</td>
+                                         <td>{{ c.date |date("dd/mm/yyyy") }}</td>
+                                         <td>{{ c.heureDep |date ("h:i") }}</td>
+                                         <td>{{c.adresse}}</td>
+                                     </tr>
+                                 {% endfor %}
+                             </table>
+
+                     </div>
+                 </div>
+                 <div class="col-md-12 col-lg-6 col-sm-12 md-mt-40 sm-mt-40">
+                     <div class="jnr__Welcome__thumb">
+                         <img src="{{ asset('images/mariem/6.png') }}" alt="" class="img-fullwidth">
+                         <a class="play__btn" href="https://www.youtube.com/watch?v=MCJEkZtqlBk"><i class="fa fa-play"></i></a>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>
+ {% endblock %}
+

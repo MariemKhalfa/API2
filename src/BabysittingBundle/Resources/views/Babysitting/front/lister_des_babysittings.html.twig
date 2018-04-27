@@ -1,0 +1,58 @@
+{% extends "base.html.twig" %}
+{% block container %}
+    <section>
+        <div class="container">
+            <div class="section-content">
+                <div class="row">
+                    <div class="container">
+                        <h2 class="text-theme-color-sky line-bottom"><span class="text-theme-color-red">Liste des covoiturages potentiels</span>
+                        </h2>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <section>
+            <div class="container">
+                <div class="row">
+                    {% for c in covs %}
+                        <div class="col-sm-6 col-md-4">
+                            <div class="item">
+                                <div class="campaign bg-white maxwidth500 mb-30">
+                                    <div class="thumb">
+                                        <img src="{{ asset('images/mariem/6.png') }}" alt="" class="img-fullwidth">
+                                        <div class="campaign-overlay"></div>
+                                    </div>
+                                    <div class="course-details clearfix p-20 pt-15">
+                                        <h4 class="price-tag">Nouveau</h4>
+                                        <h3 class="mt-0"><a class="text-theme-color-green" href="#">{{ c.titre }}</a></h3>
+
+                                        <ul class="review_text list-inline">
+
+                                        </ul>
+                                        <p>C{{ c.description }} ... <a
+                                                    class="text-theme-colored ml-5" href="{{ path('details_babysitting' ,{"id":c.id}) }}"> →</a></p>
+                                        <div class="course-details-bottom mt-15">
+
+                                            <ul class="list-inline">
+                                                <li>Nombre d'enfats<span>{{ c.nbPlaces}}</span></li>
+                                                <li>Horaires<span>{{ c.heureDeb|date("h:i")}} - {{ c.heureFin|date("h:i")}}</span></li>
+                                                <li>Date<span>{{ c.date |date("d/m/y")}}</span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+
+
+
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </section>
+    </section>
+
+{% endblock %}
+
+

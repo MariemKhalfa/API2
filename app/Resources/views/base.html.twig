@@ -1,0 +1,513 @@
+<!doctype html>
+<html class="no-js" lang="zxx">
+<meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>All For Kids</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Favicons -->
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
+    <link rel="apple-touch-icon" href="{{ asset('images/icon.png') }}">
+    <!-- Google font (font-family: 'Dosis', Roboto;) -->
+    <link href="https://fonts.googleapis.com/css?family=Dosis:400,500,600,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet">
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="{{ asset('css/bootstrap.min.css') }}">
+    <script
+            src="{{ asset('jquery-3.2.1.js') }}"></script>
+    <link rel="stylesheet" href="{{ asset('css/plugins.css') }}">
+    <link rel="stylesheet" href="{{ asset('style.css') }}">
+
+    <!-- Cusom css -->
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+
+    <!-- Modernizer js -->
+    <script src="{{ asset('js/vendor/modernizr-3.5.0.min.js') }}"></script>
+    <!---Mariem -->
+    <!-- Stylesheet -->
+    <link href="{{ asset('images/mariem/css/bootstrap.min.css" rel="stylesheet" type="text/css') }}">
+    <link href="{{ asset('images/mariem/css/jquery-ui.min.css" rel="stylesheet" type="text/css') }}">
+    <link href="{{ asset('images/mariem/css/animate.css" rel="stylesheet" type="text/css') }}">
+    <link href="{{ asset('images/mariem/css/css-plugin-collections.css" rel="stylesheet') }}"/>
+    <!-- CSS | menuzord megamenu skins -->
+    <link id="menuzord-menu-skins" href="{{ asset('images/mariem/css/menuzord-skins/menuzord-rounded-boxed.css') }}"
+          rel="stylesheet"/>
+    <!-- CSS | Main style file -->
+    <link href="{{ asset('images/mariem/css/style-main.css') }}" rel="stylesheet" type="text/css">
+    <!-- CSS | Preloader Styles -->
+    <link href="{{ asset('images/mariem/css/preloader.css') }}" rel="stylesheet" type="text/css">
+    <!-- CSS | Custom Margin Padding Collection -->
+    <link href="{{ asset('images/mariem/css/custom-bootstrap-margin-padding.css') }}" rel="stylesheet" type="text/css">
+    <!-- CSS | Responsive media queries -->
+    <link href="{{ asset('images/mariem/css/responsive.css') }}" rel="stylesheet" type="text/css">
+    <!-- CSS | Style css. This is the file where you can place your own custom css code. Just uncomment it and use it. -->
+    <!-- <link href="css/style.css" rel="stylesheet" type="text/css"> -->
+
+    <!-- Revolution Slider 5.x CSS settings -->
+    <link href="{{ asset('images/mariem/js/revolution-slider/css/settings.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('images/mariem/js/revolution-slider/css/layers.css') }}" rel="stylesheet" type="text/css"/>
+    <link href="{{ asset('images/mariem/js/revolution-slider/css/navigation.css') }}" rel="stylesheet"
+          type="text/css"/>
+
+    <link rel="stylesheet" href="https://formden.com/static/cdn/bootstrap-iso.css"/>
+
+    <!--Font Awesome (added because you use icons in your prepend/append)-->
+    <link rel="stylesheet" href="https://formden.com/static/cdn/font-awesome/4.4.0/css/font-awesome.min.css"/>
+
+    <!-- Inline CSS based on choices in "Settings" tab -->
+    <style>.bootstrap-iso .formden_header h2, .bootstrap-iso .formden_header p, .bootstrap-iso form {
+            font-family: Arial, Helvetica, sans-serif;
+            color: #24a4be
+        }
+
+        .bootstrap-iso form button, .bootstrap-iso form button:hover {
+            color: #ffffff !important;
+        }
+
+        .bootstrap-iso .btn-custom {
+            background: #33b77e
+        }
+
+        .bootstrap-iso .btn-custom:hover {
+            background: #1fa36a;
+        }
+
+        .asteriskField {
+            color: red;
+        }</style>
+
+    {% block stylesheets %}{% endblock %}
+    <!-- CSS | Theme Color -->
+    <link href="{{ asset('images/mariem/css/colors/theme-skin-color-set-1.css') }}" rel="stylesheet" type="text/css">
+    <!---Mariem -->
+</head>
+<body>
+<!--[if lte IE 9]>
+<![endif]-->
+
+<!-- Add your site or application content here -->
+
+<!-- <div class="fakeloader"></div> -->
+
+<!-- Main wrapper -->
+<div class="wrapper" id="wrapper">
+
+    <!-- Header -->
+    <header id="header" class="jnr__header header--one clearfix">
+        <!-- Start Header Top Area -->
+        <div class="junior__header__top">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-7 col-lg-6 col-sm-12">
+                        <div class="jun__header__top__left">
+                            <ul class="top__address d-flex justify-content-start align-items-center flex-wrap flex-lg-nowrap flex-md-nowrap">
+                                <li><i class="fa fa-envelope"></i><a href="#">allforkids.codeminers@gmail.com </a></li>
+                                <li><i class="fa fa-phone"></i><span>Contacter maintenant :</span><a href="#">+21652225148</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-lg-6 col-sm-3 col-12">
+                        <div class="jun__header__top__right">
+                            <ul class="accounting d-flex justify-content-lg-end justify-content-md-end justify-content-start align-items-center">
+
+                                {% if is_granted('ROLE_USER') %}
+                                    <img src="{{ asset(app.user.photo) }} " width="50px" height="50px" style="margin-right: 15px"/>
+
+                                    <li style="display: block"><a href="{{ path('fos_user_profile_edit') }}">{{ app.user.nom}}<br> {{ app.user.prenom }}</a></li>
+                                    <li><a  href="{{ path('fos_user_security_logout') }}">logout</a></li>
+                                {% else %}
+                                    <li><a class="login-trigger" href="#">Se connecter</a></li>
+                                    <li><a  href="{{ path('user_register') }}">Créer un compte</a></li>
+                                {% endif %}
+
+
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End Header Top Area -->
+        <!-- Start Mainmenu Area -->
+        <div class="mainmenu__wrapper bg__cat--1 poss-relative header_top_line sticky__header">
+            <div class="container">
+                <div class="row d-none d-lg-flex">
+                    <div class="col-sm-4 col-md-6 col-lg-2 order-1 order-lg-1">
+                        <div class="logo">
+                            <a href="{{ path('homepage') }}">
+                                <img src="{{ asset('images/kids2.png') }}" alt="logo images">
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4 col-md-2 col-lg-9 order-3 order-lg-2">
+                        <div class="mainmenu__wrap">
+                            <nav class="mainmenu__nav">
+                                <ul class="mainmenu">
+                                    <li class="drop"><a href="{{ path('homepage') }}">Accueil</a>
+
+                                    </li>
+
+                                    <li class="drop"><a href="#">Medecins</a>
+                                        <ul class="dropdown__menu">
+                                            {% if is_granted('ROLE_PARENT')  %}
+                                                <li><a href="{{ path('medecin_affichageFront') }}">Nos Medecins</a></li>
+                                                <li><a href="{{ path('medecin_rechercher') }}">Trouver un medecin</a></li>
+                                            {% endif %}
+
+                                        </ul>
+                                    </li>
+
+                                    <li class="drop"><a href="#">Garderies</a>
+                                        <ul class="dropdown__menu">
+                                            {% if is_granted('ROLE_PARENT')  %}
+                                                <li><a href="{{ path('garderie_listeFront2') }}">Nos Garderies</a></li>
+                                                <li><a href="{{ path('garderie_rechercher') }}">Trouver une garderie</a></li>
+                                            {% endif %}
+
+                                        </ul>
+                                    </li>
+
+                                    <li class="drop"><a href="{{ path('covoiturage_homepage') }}">Covoiturage</a>
+                                        {% if is_granted('ROLE_PARENT')  %}
+                                        <ul class="dropdown__menu">
+                                            <li><a href="{{ path('chercher_cov') }}">Trouver un covoiturage</a></li>
+                                            <li><a href="{{ path('ajouter_cov') }}">Proposer un covoiturage</a></li>
+                                            <li><a href="{{ path('lister_des_cov') }}">Covoiturages potentiels</a></li>
+                                            <li><a href="{{ path('lister_mes_cov') }}">Mes covoiturages</a></li>
+                                            <li><a href="{{ path('historique_cov') }}">Historique covoiturages</a></li>
+
+                                        </ul> {% endif %}
+                                    </li>
+                                    <li class="drop"><a href="{{ path('babysitting_homepage') }}">Babysitting</a>
+                                        {% if is_granted('ROLE_PARENT')  %}
+                                        <ul class="dropdown__menu">
+                                            <li><a href="{{ path('chercher_babysitting') }}">Trouver un babysitting</a></li>
+                                            <li><a href="{{ path('ajouter_babysitting') }}">Proposer un babysitting</a></li>
+                                            <li><a href="{{ path('lister_mes_babysittings') }}">Afficher mes babysittings</a></li>
+                                            <li><a href="{{ path('historique_babysitting') }}">Historique babysitting</a></li>
+
+                                        </ul> {% endif %}
+                                    </li>
+                                    <li class="drop"><a href="{{ path('evenement_homepage') }}">Evènements</a>
+
+                                    </li>
+                                    {% if is_granted('ROLE_ENSEIGNANT') %}
+                                    <li class="drop"><a href="">Classe</a>
+                                        {% else %}
+                                    <li class="drop"><a href="{{ path('e_learning_afficherEnseignant') }}">E-learning</a>
+                                        {% endif %}
+                                    <li class="drop"><a>Jeux</a>
+                                        <ul class="dropdown__menu">
+                                            <li><a href="{{ path('jeu_memoire') }}">Jeu de mémoire</a></li>
+                                            <li><a href="{{ path('jeu_math') }}">Quizz pour enfants </a></li>
+
+
+                                        </ul>
+                                    </li>
+                                    <li class="drop"><a href="{{ path('activite_list') }}">Activités</a>
+
+                                    </li>
+
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                    {% if is_granted('ROLE_PARENT')  %}
+                        <div class="col-lg-1 col-sm-4 col-md-4 order-2 order-lg-3">
+                            <div class="shopbox d-flex justify-content-end align-items-center">
+                                <a class="minicart-trigger">
+                                    <i class="fa fa-envelope"></i>
+                                </a>
+                                <a href="{{ path('garderie_notif2') }}">View</a>
+                                <span>{{ mgilet_notification_unseen_count(app.user) }} {# unseen notifications #}</span>
+                            </div>
+                        </div>
+                    {% endif %}
+                </div>
+                <!-- Mobile Menu -->
+                <div class="mobile-menu d-block d-lg-none">
+                    <div class="logo">
+                        <a href="{{ path('homepage') }}"><img src="{{ asset('images/kids2.png') }}" alt="logo"></a>
+                    </div>
+                    <a class="minicart-trigger" href="#">
+                        <i class="fa fa-envelope"></i>
+                    </a>
+
+                </div>
+                <!-- Mobile Menu -->
+            </div>
+        </div>
+        <!-- End Mainmenu Area -->
+    </header>
+    <!-- //Header -->
+    {% block container %} {% endblock %}
+    <!-- Footer Area -->
+    <!-- Footer Area -->
+    <footer id="footer" class="footer-area footer--2">
+        <div class="footer__wrapper bg-image--10 section-padding--lg">
+            <div class="container">
+                <div class="row">
+                    <!-- Start Single Widget -->
+                    <div class="col-lg-3 col-md-6 col-sm-12">
+                        <div class="footer__widget">
+                            <div class="ft__logo">
+                                <a href="index-2.html">
+                                    <img src="{{ asset('images/kids2.png')}}" alt="logo images">
+                                </a>
+                            </div>
+                            <div class="ftr__details">
+                                <p>All For Kids est comme son nom l'indique, est une application destinée aux parents et à leurs enfants afin de facilicter la vie aux prents en les aidant à trouver le meilleur pour leurs enfants..</p>
+                            </div>
+                            <div class="ftr__address__inner">
+                                <div class="footer__social__icon">
+                                    <ul class="dacre__social__link--2 d-flex justify-content-start">
+                                        <li class="facebook"><a href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+                                        <li class="twitter"><a href="https://twitter.com/"><i class="fa fa-twitter"></i></a></li>
+                                        <li class="vimeo"><a href="https://vimeo.com/"><i class="fa fa-vimeo"></i></a></li>
+                                        <li class="pinterest"><a href="https://www.pinterest.com/"><i class="fa fa-pinterest-p"></i></a></li>
+                                    </ul>
+                                </div>
+                                <div class="ft__btm__title">
+                                    <h4>About Us</h4>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Widget -->
+                    <!-- Start Single Widget -->
+                    <div class="col-lg-4 col-md-6 col-sm-12 sm-mt-40">
+                        <div class="footer__widget">
+                            <h4>Latest Blog</h4>
+                            <div class="footer__innner">
+                                <div class="ftr__latest__post">
+                                    <!-- Start Single -->
+                                    <div class="single__ftr__post d-flex">
+                                        <div class="ftr__post__thumb">
+                                            <a href="blog-details.html">
+                                                <img src="{{ asset('images/blog/post-img/2.jpg')}}" alt="post images">
+                                            </a>
+                                        </div>
+                                        <div class="ftr__post__details">
+                                            <h6><a href="blog-details.html">Sports Day is near! so lets get ready soon</a></h6>
+                                            <span><i class="fa fa-calendar"></i>30th Dec, 2017</span>
+                                        </div>
+                                    </div>
+                                    <!-- End Single -->
+                                    <!-- Start Single -->
+                                    <div class="single__ftr__post d-flex">
+                                        <div class="ftr__post__thumb">
+                                            <a href="blog-details.html">
+                                                <img src="{{ asset('images/images/blog/post-img/3.jpg')}}" alt="post images">
+                                            </a>
+                                        </div>
+                                        <div class="ftr__post__details">
+                                            <h6><a href="blog-details.html">Sports Day Celebration</a></h6>
+                                            <span><i class="fa fa-calendar"></i>21th Dec, 2017</span>
+                                        </div>
+                                    </div>
+                                    <!-- End Single -->
+                                    <!-- Start Single -->
+                                    <div class="single__ftr__post d-flex">
+                                        <div class="ftr__post__thumb">
+                                            <a href="blog-details.html">
+                                                <img src="images/blog/post-img/4.jpg" alt="post images">
+                                            </a>
+                                        </div>
+                                        <div class="ftr__post__details">
+                                            <h6><a href="blog-details.html">Sports Day Celebration</a></h6>
+                                            <span><i class="fa fa-calendar"></i>10th Dec, 2017</span>
+                                        </div>
+                                    </div>
+                                    <!-- End Single -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Widget -->
+                    <!-- Start Single Wedget -->
+
+                    <!-- End Single Wedget -->
+                    <!-- Start Single Widget -->
+                    <div class="col-lg-3 col-md-6 col-sm-12 md-mt-40 sm-mt-40">
+                        <div class="footer__widget">
+                            <h4>Twitter Widget</h4>
+                            <div class="footer__innner">
+                                <div class="dcare__twit__wrap">
+                                    <!-- Start Single -->
+                                    <div class="dcare__twit d-flex">
+                                        <div class="dcare__twit__icon">
+                                            <i class="fa fa-twitter"></i>
+                                        </div>
+                                        <div class="dcare__twit__details">
+                                            <p>Lorem ipsum dolor sit  consect ietur adipisicing sed  eiipsa<a href="#"># twitter .com?web/lnk/statement</a></p>
+                                            <span><i class="fa fa-clock-o"></i>30th Dec, 2017</span>
+                                            <span><i class="fa fa-calendar"></i>30th Dec, 2017</span>
+                                        </div>
+                                    </div>
+                                    <!-- End Single -->
+                                    <!-- Start Single -->
+                                    <div class="dcare__twit d-flex">
+                                        <div class="dcare__twit__icon">
+                                            <i class="fa fa-twitter"></i>
+                                        </div>
+                                        <div class="dcare__twit__details">
+                                            <p>Lorem ipsum dolor sit  consect ietur adipisicing sed  eiipsa<a href="#"># twitter .com?web/lnk/statement</a></p>
+                                            <span><i class="fa fa-clock-o"></i>11 Avril, 2018</span>
+                                            <span><i class="fa fa-calendar"></i>11 Avril, 2018</span>
+                                        </div>
+                                    </div>
+                                    <!-- End Single -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- End Single Widget -->
+                </div>
+            </div>
+            <div class="ft__bottom__images--1 wow flipInX" data-wow-delay="0.6s">
+                <img src="{{ asset('images/banner/mid-img/ft.png')}}" alt="footer images">
+            </div>
+            <div class="ft__bottom__images--2 wow fadeInRight" data-wow-delay="0.6s">
+                <img src="{{ asset('images/banner/mid-img/ft-2.png')}}" alt="footer images">
+            </div>
+        </div>
+        <!-- .Start Footer Contact Area -->
+        <div class="footer__contact__area bg__cat--2">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="footer__contact__wrapper d-flex flex-wrap justify-content-between">
+                            <div class="single__footer__address">
+                                <div class="ft__contact__icon">
+                                    <i class="fa fa-home"></i>
+                                </div>
+                                <div class="ft__contact__details">
+                                    <p> All For Kids </p>
+                                    <p>Lac 2, 10 Rue les Jardins - Tunis 1053</p>
+                                </div>
+                            </div>
+                            <div class="single__footer__address">
+                                <div class="ft__contact__icon">
+                                    <i class="fa fa-phone"></i>
+                                </div>
+                                <div class="ft__contact__details">
+                                    <p><a href="#">+216 52 22 51 48</a></p>
+                                    <p><a href="#">+216 58 12 77 39</a></p>
+                                </div>
+                            </div>
+                            <div class="single__footer__address">
+                                <div class="ft__contact__icon">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="ft__contact__details">
+                                    <p><a href="#">allforkids.codeminers@gmail.com</a></p>
+                                    <p><a href="#">allforkids@gmail.com</a></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- .End Footer Contact Area -->
+        <!-- .End Footer Contact Area -->
+        <div class="copyright  bg--theme">
+            <div class="container">
+                <div class="row align-items-center copyright__wrapper justify-content-center">
+                    <div class="col-lg-12 col-sm-12 col-md-12">
+                        <div class="coppy__right__inner text-center">
+                            <p><i class="fa fa-copyright"></i>All Right Reserved.<a href="https://allforkids.codeminers.com"> CodeMiners</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- //Footer Area -->
+
+    <!-- //Cartbox -->
+
+
+    <!-- Register Form -->
+    <div class="accountbox-wrapper">
+        <div class="accountbox">
+            <div class="accountbox__inner" >
+                <h4>continue to register</h4>
+                <div class="accountbox__login" >
+                    {{ render(controller('fos_user.registration.controller:registerAction')) }}
+                    <form action="#">
+
+                        <div class="accountbox-login__others text-center">
+                            <h6>or register with</h6>
+                            <ul class="dacre__social__link d-flex justify-content-center">
+                                <li class="facebook"><a target="_blank" href="https://www.facebook.com/"><span class="ti-facebook"></span></a></li>
+                                <li class="twitter"><a target="_blank" href="https://twitter.com/"><span class="ti-twitter"></span></a></li>
+                                <li class="pinterest"><a target="_blank" href="#"><span class="ti-google"></span></a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <span class="accountbox-close-button"><i class="zmdi zmdi-close"></i></span>
+            </div>
+            <h3>Have an account ? Login Fast</h3>
+        </div>
+    </div><!-- //Register Form -->
+
+    <!-- Login Form -->
+    <div class="login-wrapper">
+        <div class="accountbox">
+            <div class="accountbox__inner">
+                <h4>Login to Continue</h4>
+                <div class="accountbox__login">
+                    {{ render(controller('AppBundle:Default:login'),{ 'request' : app.request }) }}
+                    <form action="#">
+                        <div class="accountbox-login__others text-center">
+                            <ul class="dacre__social__link d-flex justify-content-center">
+                                <li class="facebook"><a target="_blank" href="https://www.facebook.com/"><span class="ti-facebook"></span></a></li>
+                                <li class="twitter"><a target="_blank" href="https://twitter.com/"><span class="ti-twitter"></span></a></li>
+                                <li class="pinterest"><a target="_blank" href="#"><span class="ti-google"></span></a></li>
+                            </ul>
+                        </div>
+                    </form>
+                </div>
+                <span class="accountbox-close-button"><i class="zmdi zmdi-close"></i></span>
+            </div>
+            <h3>Have an account ? Login Fast</h3>
+        </div>
+    </div><!-- //Login Form -->
+
+</div><!-- //Main wrapper -->
+
+<!-- JS Files -->
+<script src="{{ asset('js/vendor/jquery-3.2.1.min.js') }}"></script>
+<script src="{{ asset('js/popper.min.js') }}"></script>
+<script src="{{ asset('js/bootstrap.min.js') }}"></script>
+<script src="{{ asset('js/plugins.js') }}"></script>
+<script src="{{ asset('js/active.js') }}"></script>
+</body>
+<script language="JavaScript">
+    $('#login_form_back').submit(function (e) {
+        e.preventDefault();
+        $('#error_login').hide();
+        $.ajax({
+            type: $('#login_form_back').attr('method'),
+            url: $('#login_form_back').attr('action'),
+            data: $('#login_form_back').serialize(),
+            success: function (data, status, object) {
+                if (data.success == false) {
+                    $('#error_login').html(data.message);
+                    $('#error_login').show();
+                } else {
+                    window.location.href = data.targetUrl;
+                }
+            }
+        });
+    });
+</script>
+{% block script %}
+{% endblock %}
+
+</html>

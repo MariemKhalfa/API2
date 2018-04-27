@@ -1,0 +1,78 @@
+{% extends 'backBase.html.twig' %}
+
+{% block body %}
+    <div class="col-sm-12">
+    {{ form_start(form) }}
+
+
+<div class="row">
+    <div class="col-sm-6">
+        <div class="panel panel-default card-view">
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    <div class="row">
+                        <div class="col-sm-12 col-xs-12">
+                            <div class="form-wrap">
+                                    <div class="panel-heading">
+                                    <div class="pull-left">
+                                        <h6 class="panel-title txt-dark">Crée votre publicite</h6>
+                                    </div>
+                                    <div class="clearfix"></div>
+                                </div>
+                                <div class="form-group">
+                                <label class="control-label mb-10" for="exampleInputuname_1">Nom de la Publicite</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="ti-blackboard"></i></div>
+                                      {{ form_widget(form.intitule, { 'attr': {'class': '', 'id':'exampleInputuname_1'}} ) }}
+                                    </div>
+                                </div>
+                                    <div class="form-group">
+                                <label class="control-label mb-10" for="exampleInputEmail_1">Nom Du magasin</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="icon-pencil"></i></div>
+                                      {{ form_widget(form.nomEnsegne, { 'attr': {'class': '', 'id':'exampleInputuname_1'}} ) }}
+                                    </div>
+                                    </div>
+                                <div class="form-group">
+                                <label class="control-label mb-10" for="exampleInputpwd_1">Image de la publicite</label>
+                                    <div class="input-group">
+                                        <div class="input-group-addon"><i class="icon-picture"></i></div>
+                                      {{ form_widget(form.imagePub, { 'attr': {'class': '' , 'id':'exampleInputuname_1'}} ) }}
+                                    </div>
+                                </div>
+                             </div>
+                            <input type="submit" value="Create" class="btn btn-success  mr-10" id="succ" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+        <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('publicite_index') }}">Back to the list</a>
+        {{ form_end(form) }}
+    </div>
+
+
+    <script>
+    $('#succ').click( function() { alert('ajouter avec succeé'); });
+    </script>
+
+    <script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+    <!-- Bootstrap Daterangepicker JavaScript -->
+    <script src="{{ asset('vendors/bower_components/dropify/dist/js/dropify.min.js') }}"></script>
+
+    <!-- Form Flie Upload Data JavaScript -->
+    <script src="{{ asset('dist/js/form-file-upload-data.js') }}"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="{{ asset('dist/js/jquery.slimscroll.js') }}"></script>
+
+
+{% endblock %}

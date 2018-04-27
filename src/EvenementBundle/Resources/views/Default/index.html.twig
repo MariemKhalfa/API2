@@ -1,0 +1,84 @@
+{% extends "base.html.twig" %}
+ {% block container %}
+     <div class="ht__bradcaump__area">
+         <div class="ht__bradcaump__container">
+             <img src="{{ asset('images/wejdene/cover.jpg') }}" alt="bradcaump images">
+             <div class="container">
+                 <div class="row">
+                     <div class="col-lg-12">
+                         <div class="bradcaump__inner text-center">
+                             <h2 class="bradcaump-title">Nos Evenements</h2>
+                             <nav class="bradcaump-inner">
+                                 <a class="breadcrumb-item" href="index-2.html">Home</a>
+                                 <span class="brd-separetor"><img src="{{ asset('images/icons/brad.png') }}" alt="separator images"></span>
+                                 <span class="breadcrumb-item active">Nos Evenements</span>
+                             </nav>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+
+
+
+
+
+
+
+
+     <div class="junior__service bg-image--1 service--2 section-padding--bottom section--padding--xlg--top">
+
+
+
+         <!-- Start Our Service Area -->
+
+
+         <div class="container">
+
+             <div class="row align-items-center copyright__wrapper justify-content-center">
+
+
+
+
+
+                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 xs-mt-60" >
+                     <div class="service border__color border__color--6 bg__cat--5">
+                         <div class="service__icon" align="right">
+                             <img src="{{ asset('images/wejdene/Parents.png') }}" alt="icon images">
+                         </div>
+                         <div class="service__details">
+                             <h6><a href="single-service.html">parents</a></h6>
+                             <p>Dans cette rubrique vous allez trouver tous les evenements qui interessents les parents</p>
+                             <div class="service__btn">
+                                 <a class="dcare__btn btn__f1f1f1 hover__444 min__height-btn" href="{{ path('evenement_parent') }}">Consulter</a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+
+                 <!-- End Single Service -->
+                 <!-- Start Single Service -->
+                 <div class="col-lg-3 col-md-6 col-sm-6 col-12 md-mt-60 sm-mt-60" align="">
+                     <div class="service border__color border__color--7 bg__cat--6">
+                         <div class="service__icon" align="left">
+                             <img src="{{ asset('images/wejdene/Kids-Zone-Logo_tpTHVSiHTT93QIW66UFK-1000x421.png') }}" alt="icon images">
+                         </div>
+                         <div class="service__details">
+                             <h6><a href="single-service.html">Enfants</a></h6>
+                             <p>Dans cette rubrique vous allez trouver tous les evenements qui interessents les enfants</p>
+                             <div class="service__btn">
+                                 <a class="dcare__btn btn__f1f1f1 hover__444 min__height-btn" href="single-service.html">Consulter</a>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </div>
+
+     <!-- End Our Service Area -->
+
+ {% endblock %}
+

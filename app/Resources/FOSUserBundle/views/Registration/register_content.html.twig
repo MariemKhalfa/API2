@@ -1,0 +1,57 @@
+{% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, {'method': 'post', 'action': path('fos_user_registration_register'), 'attr': {'class': 'fos_user_registration_register'}}) }}
+<div class="form-group">
+    {{ form_row(form.CIN) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.nom) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.prenom) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.sexe) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.dateNaissance) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.rue) }}
+</div>
+<div class="single-input">
+    {{ form_row(form.ville) }}
+</div>
+<div class="single-input">
+    {{ form_row(form.codePostal) }}
+</div>
+<div class="single-input">
+    {{ form_row(form.telephone) }}
+</div>
+<div class="single-input">
+    {{ form_row(form.username) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.email) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.plainPassword) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.roles) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.babysitter) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.covoiturage) }}
+</div>
+<div class="form-group">
+    {{ form_row(form.nbreEnfants) }}
+</div>
+<div  class="single-input text-center">
+    <input type="submit" class="sign__btn" value="{{ 'Sign up'|trans }}" />
+</div>
+
+{{ form_end(form) }}
+

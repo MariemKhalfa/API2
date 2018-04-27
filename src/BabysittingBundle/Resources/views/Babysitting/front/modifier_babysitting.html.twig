@@ -1,0 +1,211 @@
+{% extends "base.html.twig" %}
+ {% block container %}
+     <!-- Main wrapper -->
+     <!-- End Bradcaump area -->
+
+     <section class="junior__service bg-image--1">
+         <div class="container">
+             <h2 class="text-theme-color-sky line-bottom"><span class="text-theme-color-red">Modification babysitting</span>
+             </h2>
+             <h4 class="text-theme-color-blue">Vous êtes sur le point de modifier votre annonce de babysitting</h4>
+             <p>En remplissant le formulaire ci-dessous, toutes les informations pécédentes seront changées.</p>
+             <p>Veuillez vérifier vos changements avant de confirmer la modification .</p>
+         </div>
+     </section>
+     <!-- Checkout Section Start-->
+
+
+
+     <!-- Payment Method -->
+
+
+
+     <!-- End Bradcaump area -->
+     {#<section class="junior__service bg-image--1">
+         <div class="container">
+             <h2 class="text-theme-color-sky line-bottom"><span class="text-theme-color-red">Modification babysitting</span>
+             </h2>
+         </div>
+     </section>
+
+    {{ form_start(f) }}
+    <table border="0px" class="table" >
+        <tr >
+            <td>Description</td>
+            <td>{{ form_widget(f.description) }}</td>
+        </tr>
+    </table>
+
+    {{ form_widget(f.Ajouter) }}
+    {{ form_end(f) }}
+#}
+     {#
+
+         <section>
+             <section class="htc__checkout bg--white ">
+                 <!-- Checkout Section Start-->
+                 <div class="checkout-section">
+                     <div class="container">
+                         <div class="row">
+                             <div class="col-lg-8 col-12 ">
+                                 <a class="accordion-head" data-toggle="collapse" data-parent="#checkout-accordion"
+                                    href="#checkout-method"> {{ tit }}</a>
+
+                                 <div id="checkout-method" class="collapse show">
+                                     <div class="checkout-method accordion-body fix">
+                                         <form action="#" class="">
+                                             <div class="row form-group">
+                                                 <div class="col col-md-4">
+                                                     <label for="text-input" class=" form-control-label">Date </label>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <div class='input-group date' id='timepicker'><input type="email" value="{{  }}">
+                                                         <span class="input-group-addon">
+                                                                          <span class="fa fa-calendar"></span>
+                                                                  </span>
+                                                     </div>
+                                                 </div>
+                                             </div>
+                                             <div class="row form-group">
+                                                 <div class="col col-md-4">
+                                                     <label for="text-input" class=" form-control-label">Heure de départ</label>
+                                                 </div>
+                                                 <div class="form-group">
+                                                     <div class='input-group date' id='timepicker'>{{ form_widget(form.heureDep,{attr: {class: 'form-control'} }) }}
+                                                         <span class="input-group-addon">
+                                                                          <span class="fa fa-clock-o"></span>
+                                                                  </span>
+                                                     </div>
+                                                 </div>
+                                             </div>
+
+                                             <div class="row form-group">
+
+                                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Départ </label>
+                                                 </div>
+
+                                                 <div class="col-12 col-md-9">{{ form_widget(form.lieuDep,{attr: {class: 'form-control'} }) }}
+
+
+                                                 </div>
+                                             </div>
+                                             <div class="row form-group">
+                                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Destination </label>
+                                                 </div>
+
+                                                 <div class="col-12 col-md-9">{{ form_widget(form.lieuDest,{attr: {class: 'form-control'} }) }}
+
+
+                                                 </div>
+                                             </div>
+
+
+                                             <div class="row form-group">
+                                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Places  </label></div>
+                                                 <div class="col-12 col-md-9">{{ form_widget(form.nbPlaces,{attr: {class: 'form-control'} }) }}</div>
+                                             </div>
+
+                                             <div class="row form-group">
+                                                 <div class="col col-md-3"><label for="text-input" class=" form-control-label">Description  </label></div>
+                                                 <div class="col-12 col-md-9">{{ form_widget(form.description,{attr: {class: 'form-control'} }) }}</div>
+                                                 <br><br><br>
+                                             </div>
+                                             <div class="input-box col-md-6 col-12 mb--20">
+                                                 {{ form_widget(form.Modifier,{attr: {class: 'dcare__btn'}}) }}
+
+                                             </div>
+
+
+                                         </form>
+
+
+
+                                     </div>
+                                 </div>
+
+
+
+                             </div>
+                         </div>
+                     </div>
+
+                 </div><!-- Checkout Sec
+         </section>
+
+          <form action="{{ path('modifier_babysitting',{"id":id}) }}" method="post">
+              #}
+     {#     {{ form_start(form, {'method': 'post', 'action': path('ajouter_cov'), 'attr': {'class': 'ajouter_cov'}}) }}#}{#
+
+
+              <div class="container">
+
+                  <div class="row mt--80">
+                      <div class="col-lg-12">
+                          <div class="contact-form-wrap">
+
+                              <form id="contact-form" action="https://devitems.com/preview/junior/mail.php"
+                                    method="post">
+                                  <div class="single-contact-form name">
+                                      #}
+     {#   {{ form_widget(form.titre,{attr: {class: 'form-control'} }) }}#}{#
+
+                                      <input type="text" id="titre" name="titre" placeholder="titre de l'annonce de babysitting">
+
+                                  </div>
+                                  <div class="single-contact-form name">
+                                      #}
+     {#  {{ form_widget(form.date,{attr: {class: 'form-control'} }) }}#}{#
+
+                                      <input type="date" id="date" name="date" placeholder="date du covoiturage">
+                                  </div>
+                                  <div class="single-contact-form name">
+                                      #}
+     {#    {{ form_widget(form.heureDeb,{attr: {class: 'form-control'} }) }}#}{#
+
+                                      <input type="time" id="heureD" name="heureD" placeholder="heure début">
+                                  </div>
+                                  <div class="single-contact-form name">
+                                      #}
+     {#  {{ form_widget(form.heureFin,{attr: {class: 'form-control'} }) }}#}{#
+
+                                      <input type="time" id="heureF" name="heureF" placeholder="heure fin">
+                                  </div>
+                                  <div class="single-contact-form name">
+                                      #}
+     {# {{ form_widget(form.adresse,{attr: {class: 'form-control'} }) }}#}{#
+
+                                      <input type="text" id="adresse" name="adresse" placeholder="adresse">
+                                  </div>
+                                  <div class="single-contact-form name">
+                                      #}
+     {# {{ form_widget(form.nbrEnfants,{attr: {class: 'form-control'} }) }}#}{#
+
+                                      <input type="number" id="nbr" name="nbr"
+                                             placeholder="nombre de places proposés">
+                                  </div>
+                                  <div class="single-contact-form name">
+                                      #}
+     {# {{ form_widget(form.description,{attr: {class: 'form-control'} }) }}#}{#
+
+                                      <textarea name="description" id="description" placeholder="description de l'annonce de babysitting.."></textarea>
+                                  </div>
+                                  <div class="contact-btn">
+                                      #}
+     {# {{ form_widget(form.Ajouter,{attr: {class: 'dcare__btn'} }) }}#}{#
+
+                                      <button type="submit" class="dcare__btn">Modifier</button>
+                                  </div>
+                              </form>
+                          </div>
+
+                      </div>
+                  </div>
+              </div>
+              #}
+     {#  {{ form_end(form) }}#}{#
+
+          </form>
+
+     <!-- Billing Method -->
+     #}
+ {% endblock %}

@@ -1,0 +1,18 @@
+e_learning_homepage:
+    path:     /Ens
+    defaults: { _controller: ELearningBundle:Default:index }
+e_learning_afficherEnseignant:
+    path:     /affichEnseignant
+    defaults: { _controller: ELearningBundle:Default:affiche }
+e_learning_affecterEnfant:
+    path:     /affecterEnseignant/{idm}/{idp}
+    defaults: { _controller: ELearningBundle:EnfantMalade:ajout }
+e_learning_afficherBackEnseignant:
+    path:     /affichbackEnseignant
+    defaults: { _controller: ELearningBundle:Default:afficheBack }
+e_learning_modifBackEnseignant:
+    path:     /ModificationEnseignant
+    defaults: { _controller: ELearningBundle:Default:modif }
+e_learning_suppBackEnseignant:
+    path:     /SupprimerEnseignant
+    defaults: { _controller: ELearningBundle:Default:supp }

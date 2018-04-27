@@ -1,0 +1,185 @@
+{% extends "base.html.twig" %}
+ {% block container %}
+
+     <section class="junior__welcome__area bg-image--26">
+     <div class="container">
+     <div class="row">
+         <div class="col-lg-12">
+             <div class="section__title text-center">
+                 <h2 class="title__line"><span class="text-theme-color-blue">Details Garderie </span></h2>
+
+             </div>
+         </div>
+     </div>
+    <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+    <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+
+            <div class="row">
+                <div class="col-lg-9">
+                    <!-- Start Blogs -->
+                    <div class="row">
+                        <!-- Start Single BLog -->
+                        <div class="col-12">
+                            <article class="blog__single sticky__blog">
+                                <div class="blog__thumb">
+                                    <a href="blog-details.html">
+
+                                        <img src="{{ asset('uploads/images/'~ modele.image ) }}" alt="blog images" >
+                                    </a>
+                                </div>
+
+                                {{ form_start(form) }}
+                                <div style="display: none">{{ form_widget(form.idGarderie) }}</div>{{ form_widget(form.rating) }}{{ form_widget(form.Noter,{attr: {class:'dcare__btn btn__f6f6f6'} }) }}
+{{ form_end(form) }}
+                                <div class="blog__content">
+                                    <h2 ><a href="blog-details.html">{{ modele.nom }}</a></h2>
+                                    <ul class="bl__post">
+                                        <li>Date d'ouverture: {{ modele.dateOuverture|date("d/m/y") }}</li>
+                                        <br>
+                                        <li>Date  de fermeture: {{ modele.dateFermeture|date("d/m/y") }}</li>
+                                        <li>Heure  debut: {{ modele.heureDeb|date('H:i:s') }} </li>
+                                        <li>Heure  fin: {{ modele.heureFin|date('H:i:s') }} </li>
+
+                                    </ul><p>{{ modele.descriptif }}</p>
+                                   <p>Email:   {{ modele.email }}</p>
+                                    <p>Cout:    {{ modele.cout }}.</p>
+                                </div>
+                            </article>
+                        </div>
+                        <!-- End Single BLog -->
+
+
+
+                    </div>
+                    <!-- End Blogs -->
+                </div>
+                <!-- Start Sidebar -->
+                <div class="col-lg-3">
+                    <div class="sidebar__widgets sidebar--right">
+                        <input type="hidden" id="longitude" value={{ modele.longitude }}>
+                        <input type="hidden" id="latitude" value={{ modele.latitude }}>
+                        <input type="hidden" id="ville" value={{ modele.adresse }}>
+                        <!-- Single Widget -->
+                        <div class="single__widget search">
+                            <h4>Search</h4>
+                            <form method="post">
+                                <input type="text" id="search" placeholder="Search keyword">
+                                <button type="submit"><i class="fa fa-search"></i></button>
+                            </form>
+                        </div>
+                        <!-- End Widget -->
+
+
+
+
+                        <!-- Single Widget -->
+                        <div class="single__widget recent__comment">
+                            <div id="map" style="width:300px;height: 400px;"></div>
+                        </div>
+                        <!-- End Widget -->
+                        <!-- Single Widget -->
+                        <div class="single__widget recent__post">
+                            <h4>Recent Posts</h4>
+                            <ul>
+                                <li>
+                                    <a href="blog-details.html"><img src="{{ asset('images/blog/sm-img/1.jpg') }}" alt="post images"></a>
+                                    <div class="post__content">
+                                        <h6><a href="{{ path('garderie_meilleur') }}">Nos meilleurs garderies</a></h6>
+
+                                    </div>
+                                </li>
+
+
+                            </ul>
+                        </div>
+                        <!-- End Widget -->
+
+                    </div>
+                </div>
+                <!-- End Sidebar -->
+            </div>
+        </div>
+    </div>
+    <!-- End Blog Grid Area -->
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBvq8htYVhOZs03ZuJEm6qiGPzfM_7O5x4" type="text/javascript"
+    ></script>
+    <script>
+
+
+
+        function initialize()
+        {   var k=parseFloat($("#latitude").val());
+            var j=parseFloat($("#longitude").val());
+
+            var w=$("#ville").val();
+
+            var mapoptions={
+                zoom:8,
+                center:{lat:k,lng:j}
+            }
+            var map=new google.maps.Map(document.getElementById('map'),mapoptions);
+
+            var myLating=new google.maps.LatLng(k,j);
+            var mapoptions={
+                Zoom:4,
+                center:myLating
+
+            };
+            var map=new google.maps.Map(document.getElementById('map'),mapoptions);
+            var marker=new google.maps.Marker({
+                position:{lat:k,lng:j},
+                map:map,
+
+            });
+            var infowindow=new google.maps.InfoWindow({
+                content:w
+            });
+            marker.addListener('click',function (){
+                infowindow.open(map,marker);
+            });
+
+
+        }
+        google.maps.event.addDomListener(window,'load',initialize());
+    </script>
+{% block content %}
+    <div id="div"></div>
+    <script src="{{ asset('jquery-3.2.1.js') }}"></script>
+    <script>
+        $("#search").keyup(
+            function(){
+                var serie=$("#search").val();
+                var Data='serie=' + serie;
+                console.log(Data);
+                $.ajax({
+                    type:"POST",
+                    url: "{{ path('garderie_details') }}",
+                    data: Data,
+                    success:function(data){
+                        console.log(data)
+
+                        $("#div").html("<table id='res'>" +
+                            "<td>Nos Garderies</td>");
+                        $.each(data,function (k,e1) {
+
+
+                            $("#res").append(
+                                "<tr>"+
+                                "<td>"+e1.nom+"</td>"+
+
+                                "</tr>");
+
+
+                        });
+                    }
+                });
+
+            }
+
+        );
+
+    </script>
+    </section>
+{% endblock %}
+{% endblock %}

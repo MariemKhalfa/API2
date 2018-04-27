@@ -1,0 +1,80 @@
+back_office_admin:
+    resource: "@BackOfficeBundle/Resources/config/routing/promotions.yml"
+    prefix:   /admin
+
+back_office_homepage:
+    path:     /home
+    defaults: { _controller: BackOfficeBundle:Default:index }
+promotions_index:
+    path:     /promotion
+    defaults: { _controller: "BackOfficeBundle:Promotions:index" }
+    methods:  GET
+
+promotions_show:
+    path:     /promotion/{id}/show
+    defaults: { _controller: "BackOfficeBundle:Promotions:show" }
+    methods:  GET
+
+promotions_new:
+    path:     /promotion/new
+    defaults: { _controller: "BackOfficeBundle:Promotions:new" }
+    methods:  [GET, POST]
+
+promotions_edit:
+    path:     /promotion/{id}/edit
+    defaults: { _controller: "BackOfficeBundle:Promotions:edit" }
+    methods:  [GET, POST]
+
+promotions_delete:
+    path:     /promotion/{id}/delete
+    defaults: { _controller: "BackOfficeBundle:Promotions:delete" }
+    methods:  DELETE
+
+coupons_index:
+    path:     /coupons
+    defaults: { _controller: "BackOfficeBundle:coupons:index" }
+    methods:  GET
+
+coupons_show:
+    path:     coupons/{id}/show
+    defaults: { _controller: "BackOfficeBundle:coupons:show" }
+    methods:  GET
+
+coupons_new:
+    path:     coupons/new
+    defaults: { _controller: "BackOfficeBundle:coupons:new" }
+    methods:  [GET, POST]
+
+coupons_edit:
+    path:     coupons/{id}/edit
+    defaults: { _controller: "BackOfficeBundle:coupons:edit" }
+    methods:  [GET, POST]
+
+coupons_delete:
+    path:     coupons/{id}/delete
+    defaults: { _controller: "BackOfficeBundle:coupons:delete" }
+    methods:  DELETE
+publicite_index:
+    path:     /publicite
+    defaults: { _controller: "BackOfficeBundle:Publicite:index" }
+    methods:  GET
+
+publicite_show:
+    path:     /publicite/{id}/show
+    defaults: { _controller: "BackOfficeBundle:Publicite:show" }
+    methods:  GET
+
+publicite_new:
+    path:     /publicite/new
+    defaults: { _controller: "BackOfficeBundle:Publicite:new" }
+    methods:  [GET, POST]
+
+publicite_edit:
+    path:     /publicite/{id}/edit
+    defaults: { _controller: "BackOfficeBundle:Publicite:edit" }
+    methods:  [GET, POST]
+
+publicite_delete:
+    path:     /publicite/{id}/delete
+    defaults: { _controller: "BackOfficeBundle:Publicite:delete" }
+    methods:  DELETE

@@ -1,0 +1,48 @@
+{% extends '::base.html.twig' %}
+{% block container %}
+
+
+    <div class="dcare__event__area bg--white section-padding--lg">
+        <div class="container">
+            <div class="row event-grid-page">
+
+                {% for e in evenement %}
+                    {% if e.categorie== "parent" %}
+                    <!-- Start Single Event -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="dcare__event">
+                            <div class="event__content">
+                                <div class="event__pub">
+                                    <div class="event__date">
+                                        <span class="date">{{ e.date|date('d') }}</span><span>th</span>
+                                    </div>
+                                    <ul class="event__time">
+                                        <li>{{ e.date|date('M-Y') }}, <i class="fa fa-clock-o"></i>{{ e.date|date('H:i') }} </li>
+                                        <li><i class="fa fa-home"></i>{{ e.adresse}}</li>
+                                    </ul>
+                                </div>
+                                <div class="event__inner">
+                                    <p><a>{{ e.intitule }}</a></p>
+                                </div>
+                                <ul class="event__btn">
+
+                                </ul>
+                            </div>
+                            <div class="event__thumb">
+                                <a href="{{ absolute_url(asset('')) }}app_dev.php/activite/show/{{ e.id }}">
+                                    <img src="{{ asset('uploads/images/'~ e.image ) }}" width="200%">
+
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start Single Event -->
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+
+    </div><!-- .animated -->
+    <!-- End Our Event Area -->
+    <!-- End Bradcaump area -->
+{% endblock %}

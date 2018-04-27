@@ -1,0 +1,77 @@
+{% extends '::base.html.twig' %}
+{% block container %}
+    <!-- Start Bradcaump area -->
+    <div class="ht__bradcaump__area">
+        <div class="ht__bradcaump__container">
+            <img src="{{ asset('images/bg-png/6.png') }}" alt="bradcaump images">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="bradcaump__inner text-center">
+                            <h2 class="bradcaump-title">Nos Activités</h2>
+                            <nav class="bradcaump-inner">
+                                <a class="breadcrumb-item" href="index-2.html">Home</a>
+                                <span class="brd-separetor"><img src="{{ asset('images/icons/brad.png') }}" alt="separator images"></span>
+                                <span class="breadcrumb-item active">Nos Activités</span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="dcare__event__area bg--white section-padding--lg">
+        <div class="container">
+            <div class="row event-grid-page">
+
+
+
+                                </div>
+
+                                <div class="blog__content">
+                                    <h2 ><a href="blog-details.html">{{ activite.type }}</a></h2>
+
+                                    <ul class="bl__post">
+                                        <li> <img src="{{ asset('uploads/images/'~ activite.image) }}" width="50%"></li>
+                                        <li>Date : {{ activite.date |date("d/m/y") }}</li>
+                                        <br>
+                                        <li>Heure  : {{ activite.heure|date('H:i:s') }} </li>
+
+
+                                    </ul><p>{{ activite.description}}</p>
+
+                                </div>
+
+                        </div>
+                        <!-- End Single BLog -->
+
+
+
+                    </div>
+                    <!-- End Blogs -->
+                </div>
+                <!-- Start Sidebar -->
+
+                        <!-- End Widget -->
+
+
+
+
+                        <!-- Single Widget -->
+                        <div class="single__widget recent__comment">
+                            <div id="map" style="width:300px;height: 400px;"></div>
+                        </div>
+                        <!-- End Widget -->
+
+                    </div>
+                </div>
+                <!-- End Sidebar -->
+            </div>
+        </div>
+    </div>
+    <!-- End Blog Grid Area -->
+</div>
+</div>
+</div>
+{% endblock %}

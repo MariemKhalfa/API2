@@ -1,0 +1,76 @@
+{% extends 'backBase.html.twig' %}
+{% block body %}
+
+
+    <div class="col-sm-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">Activités</h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body">
+                    {% for success_message in app.session.flashbag.get('message') %}
+                        <div class="alert alert-success">{{ success_message }}</div>
+                    {% endfor %}
+
+                     <code>La table des Activités :</code>
+                    <a href="{{ path('activite_createActivite') }}" class="btn" value="Ajouter une activite" style="color: #0e3e70;">Ajouter une activité </a>
+                    <div class="table-wrap mt-70">
+                        <div class="table-responsive    ">
+                            <table class="table table-hover ">
+                                <thead>
+                                <tr>
+                                    <th>Type</th>
+                                    <th>Adresse</th>
+                                    <th>Date       </th>
+                                    <th>Heure</th>
+                                    <th>Age minimal</th>
+                                    <th>Description</th>
+                                    <th>Image</th>
+                                    <th>Action</th>
+
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for a in Activite %}
+                                <tr>
+
+
+                                    <td>{{ a.type }}</td>
+                                    <td>{{ a.adresse }}</td>
+                                    <td>{{ a.date | date('d-m-y')}}</td>
+                                    <td>{{ a.heure | date('H:i') }}</td>
+                                    <td>{{ a.ageMin }}</td>
+                                    <td>{{ a.description }}</td>
+                                    <td><img src="{{ asset('uploads/images/'~ a.image ) }}" width="50%"></td>
+
+                                    <td class="text-nowrap"><a href="{{ path('activite_updateActivite',{'id':a.id }) }}"  class="mr-25" data-toggle="tooltip" data-original-title="Edit"> <i class="fa fa-pencil text-inverse m-r-10"></i> </a> <a href="{{ path('activite_deleteActivite',{'id':a.id  }) }}" > <i class="fa fa-close text-danger"></i> </a> </td>
+
+
+                                </tr>
+                                {% else %}
+                                    <tr>
+                                        <td>
+                                            Pas d'activités !
+                                        </td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% block java %}
+    <script src="{{ asset('vendors/bower_components/peity/jquery.peity.min.js') }}"></script>
+    <script src="{{ asset('dist/js/peity-data.js') }}"></script>
+
+    {% endblock %}
+{% endblock %}

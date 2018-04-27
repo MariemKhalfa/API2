@@ -1,0 +1,21 @@
+{% extends 'backBase.html.twig' %}
+
+{% block body %}
+<div class="panel panel-default card-view">
+    <h1>Coupon creation</h1>
+<div class="panel panel-default card-view">
+<div   class="form-wrap">
+    {{ form_start(form) }}
+        {{ form_widget(form) }}
+        <input type="submit" class="btn  btn-primary btn-rounded" value="Create" />
+    {{ form_end(form) }}
+</div>
+    <ul>
+        <li>
+           <a class="class="label label-info capitalize-font inline-block ml-10"" href="{{ path('coupons_index') }}"></a>Listes des coupons</button>
+
+        </li>
+    </ul>
+</div>
+</div>
+{% endblock %}

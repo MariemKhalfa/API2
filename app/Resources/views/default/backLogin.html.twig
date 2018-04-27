@@ -1,0 +1,27 @@
+{% extends ":default:layoutLoginBack.html.twig" %}
+
+{% block fos_user_content %}
+    {{ include('@FOSUser/Security/backLogin_content.html.twig') }}
+{% endblock fos_user_content %}
+{% block js %}
+    <script language="JavaScript">
+        $('#login_form_back').submit(function (e) {
+            e.preventDefault();
+            $('#error_login').hide();
+            $.ajax({
+                type: $('#login_form_back').attr('method'),
+                url: $('#login_form_back').attr('action'),
+                data: $('#login_form_back').serialize(),
+                success: function (data, status, object) {
+                    if (data.success == false) {
+                        $('#error_login').html(data.message);
+                        $('#error_login').show();
+                    } else {
+                        alert(data.targetUrl);
+                        window.location.href = data.targetUrl;
+                    }
+                }
+            });
+        });
+    </script>
+{% endblock %}

@@ -1,0 +1,27 @@
+garderie_homepage:
+    path:     /garderie
+    defaults: { _controller: GarderieBundle:Default:index }
+garderie_ajout:
+    path:     /Ajoutgarderie
+    defaults: { _controller: GarderieBundle:Garderies:ajout }
+garderie_liste:
+    path:     /listesgarderies
+    defaults: { _controller: GarderieBundle:Garderies:list }
+garderie_modifier:
+    path:     /ModifierGarderie
+    defaults: { _controller: GarderieBundle:Garderies:Update }
+garderie_supprimer:
+    path:     /SupprimerGarderie
+    defaults: { _controller: GarderieBundle:Garderies:Delete }
+garderie_inscriptionListe:
+    path:     /InscriptionListes
+    defaults: { _controller: GarderieBundle:Garderies:listesInscription }
+garderie_approuver:
+    path:     /InscriptionApprouver
+    defaults: { _controller: GarderieBundle:Garderies:Approuver }
+garderie_stat:
+    path:     /stat
+    defaults: { _controller: GarderieBundle:Garderies:StatistiquesInscripion}
+
+
+

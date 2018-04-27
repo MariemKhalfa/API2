@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+    {% block title %} <title>All For kids admin interface</title> {% endblock %}
+    <meta name="description" content="Kenny is a Dashboard & Admin Site Responsive Template by hencework." />
+
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('favicon.ico') }}">
+    <link rel="icon" href="{{ asset('favicon.ico') }}" type="image/x-icon">
+
+    <!-- Data table CSS -->
+    <link href="{{ asset('vendors/bower_components/datatables/media/css/jquery.dataTables.min.css') }}" rel="stylesheet" type="text/css"/>
+
+    <!-- Custom CSS -->
+    <link href="{{ asset('dist/css/style.css') }}" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+<!--Preloader-->
+<div class="preloader-it">
+    <div class="la-anim-1"></div>
+</div>
+<!--/Preloader-->
+<div class="wrapper">
+
+    <!-- Top Menu Items -->
+    <nav class="navbar navbar-inverse navbar-fixed-top">
+        <a id="toggle_nav_btn" class="toggle-left-nav-btn inline-block mr-20 pull-left" href="javascript:void(0);"><i class="fa fa-bars"></i></a>
+        <a href="index.html"><img class="brand-img pull-left" src="{{ asset('dist/img/logo-sm.png') }}" alt="brand"/></a>
+        <ul class="nav navbar-right top-nav pull-right">
+            <li>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#site_navbar_search">
+                    <i class="fa fa-search top-nav-icon"></i>
+                </a>
+            </li>
+            <li>
+                <a id="open_right_sidebar" href="javascript:void(0);"><i class="fa fa-cog top-nav-icon"></i></a>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-th top-nav-icon"></i></a>
+                <ul class="dropdown-menu app-dropdown" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                    <li>
+                        <ul class="app-icon-wrap">
+                            <li>
+                                <a href="#" class="connection-item">
+                                    <i class="pe-7s-umbrella txt-info"></i>
+                                    <span class="block">weather</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="connection-item">
+                                    <i class="pe-7s-mail-open-file txt-success"></i>
+                                    <span class="block">e-mail</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="connection-item">
+                                    <i class="pe-7s-date txt-primary"></i>
+                                    <span class="block">calendar</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="connection-item">
+                                    <i class="pe-7s-map txt-danger"></i>
+                                    <span class="block">map</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="connection-item">
+                                    <i class="pe-7s-comment txt-warning"></i>
+                                    <span class="block">chat</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="connection-item">
+                                    <i class="pe-7s-notebook"></i>
+                                    <span class="block">contact</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="divider"></li>
+                    <li class="text-center"><a href="#">More</a></li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell top-nav-icon"></i><span class="top-nav-icon-badge">5</span></a>
+                <ul  class="dropdown-menu alert-dropdown" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                    <li>
+                        <div class="streamline message-box message-nicescroll-bar">
+                            <div class="sl-item">
+                                <div class="sl-avatar avatar avatar-sm avatar-circle">
+                                    <img class="img-responsive img-circle" src="{{ asset('dist/img/user.png') }}" alt="avatar"/>
+                                </div>
+                                <div class="sl-content">
+                                    <a href="javascript:void(0)" class="inline-block capitalize-font  pull-left">Sandy Doe</a>
+                                    <span class="inline-block font-12  pull-right">12/10/16</span>
+                                    <div class="clearfix"></div>
+                                    <p>Neque porro quisquam est!</p>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="sl-item">
+                                <div class="icon">
+                                    <i class="fa fa-spotify"></i>
+                                </div>
+                                <div class="sl-content">
+                                    <a href="javascript:void(0)" class="inline-block capitalize-font  pull-left">
+                                        2 voice mails</a>
+                                    <span class="inline-block font-12  pull-right">2pm</span>
+                                    <div class="clearfix"></div>
+                                    <p>Neque porro quisquam est</p>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="sl-item">
+                                <div class="icon">
+                                    <i class="fa fa-whatsapp"></i>
+                                </div>
+                                <div class="sl-content">
+                                    <a href="javascript:void(0)" class="inline-block capitalize-font  pull-left">8 voice messanger</a>
+                                    <span class="inline-block font-12 pull-right">1pm</span>
+                                    <div class="clearfix"></div>
+                                    <p>8 texts</p>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="sl-item">
+                                <div class="icon">
+                                    <i class="fa fa-envelope"></i>
+                                </div>
+                                <div class="sl-content">
+                                    <a href="javascript:void(0)" class="inline-block capitalize-font  pull-left">2 new messages</a>
+                                    <span class="inline-block font-12  pull-right">1pm</span>
+                                    <div class="clearfix"></div>
+                                    <p>ashjs@gmail.com</p>
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="sl-item">
+                                <div class="sl-avatar avatar avatar-sm avatar-circle">
+                                    <img class="img-responsive img-circle" src="{{ asset('dist/img/user4.png') }}" alt="avatar"/>
+                                </div>
+                                <div class="sl-content">
+                                    <a href="javascript:void(0)" class="inline-block capitalize-font  pull-left">Sandy Doe</a>
+                                    <span class="inline-block font-12  pull-right">1pm</span>
+                                    <div class="clearfix"></div>
+                                    <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit</p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+            <li class="dropdown">
+                <a href="#" class="dropdown-toggle pr-0" data-toggle="dropdown"><img src="{{ asset('dist/img/user1.png') }}" alt="user_auth" class="user-auth-img img-circle"/><span class="user-online-status"></span></a>
+                <ul class="dropdown-menu user-auth-dropdown" data-dropdown-in="fadeIn" data-dropdown-out="fadeOut">
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-user"></i> </a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-credit-card-alt"></i> my balance</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-envelope"></i> Inbox</a>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-gear"></i> Settings</a>
+                    </li>
+                    <li class="divider"></li>
+                    <li>
+                        <a href="#"><i class="fa fa-fw fa-power-off"></i> Log Out</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <div class="collapse navbar-search-overlap" id="site_navbar_search">
+            <form role="search">
+                <div class="form-group mb-0">
+                    <div class="input-search">
+                        <div class="input-group">
+                            <input type="text" id="overlay_search" name="overlay-search" class="form-control pl-30" placeholder="Search">
+                            <span class="input-group-addon pr-30">
+									<a  href="javascript:void(0)" class="close-input-overlay" data-target="#site_navbar_search" data-toggle="collapse" aria-label="Close" aria-expanded="true"><i class="fa fa-times"></i></a>
+									</span>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </nav>
+    <!-- /Top Menu Items -->
+
+    <!-- Left Sidebar Menu -->
+    <div class="fixed-sidebar-left">
+        <ul class="nav navbar-nav side-nav nicescroll-bar">
+            <li>
+                <a   href="javascript:void(0);" data-toggle="collapse" data-target="#dashboard_dr"><i class="icon-grid mr-10"></i>Bonne Affaires <span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+                <ul id="dashboard_dr" class="collapse collapse-level-1">
+                    <li>
+                        <a href="{{ path('publicite_index') }}">Gestion Publicité</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('coupons_index') }}">Gestion Coupons</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('promotions_index') }}">Gestion Promotion</a>
+                    </li>
+                 </ul>
+                <li>
+            <li>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#app_dr"><i class="icon-grid mr-10"></i>Garderies <span class="pull-right"><span class="label label-info mr-10">2</span><i class="fa fa-fw fa-angle-down"></i></span></a>
+                <ul id="app_dr" class="collapse collapse-level-1">
+                    <li>
+                        <a href="{{ path('demande_afficher2') }}">Gestion Demandes</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('garderie_statistiques2') }}">Statistiques Garderies</a>
+                    </li>
+
+                </ul>
+            <li>
+                <a href="{{ path('e_learning_afficherBackEnseignant') }}" data-toggle="collapse" data-target="#app_dr"><i class="icon-grid mr-10"> Gestion Enseignants</i> <span class="pull-right"><span class="label label-info mr-10"></span></span></a>
+
+                <a href="{{ path('activite_afficherActivite') }}" data-toggle="collapse" data-target="#ui_dr"><i class="icon-vector mr-10"> Gestion Activités</i><span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+
+
+            </li>
+            <li>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#table_dr"><i class="icon-list mr-10">  Medecins</i><span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+                <ul id="table_dr" class="collapse collapse-level-1">
+                    <li>
+                        <a href="{{ path('medecin_ajout') }}">Ajouter Medecin</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('medecin_liste') }}">Afficher medecins</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+
+
+            <li>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#form_dr"><i class=" icon-flag mr-10"> Evenements</i><span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+                <ul id="form_dr" class="collapse collapse-level-1">
+                    <li>
+                        <a href="{{ path('evenement_ajout') }}">Ajouter un Evenement</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('evenement_list') }}">Afficher la liste des Evenements</a>
+                    </li>
+                </ul>
+            </li>
+
+            <li>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#cov_dr"><i class=" pe-7s-car mr-10"></i> Covoiturage<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+
+                <ul id="cov_dr" class="collapse collapse-level-1">
+                    <li>
+                        <a href="#">Statistiques covoiturages</a>
+                    </li>
+                    <li>
+                        <a href="{{ path('list_cov_admin') }}">Liste des covoiturages</a>
+                    </li>
+                    <li>
+                        <a href="#">Liste des covoitureurs</a>
+                    </li>
+                    <li>
+                        <a href="#">Liste des participations</a>
+                    </li>
+
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);" data-toggle="collapse" data-target="#bab_dr"><i class="pe-7s-cart mr-10"></i> Babysitting<span class="pull-right"><i class="fa fa-fw fa-angle-down"></i></span></a>
+
+                <ul id="bab_dr" class="collapse collapse-level-1">
+                    <li>
+                        <a href="#">Statistiques babysittings</a>
+                    </li>
+                    <li>
+                        <a href="#">Liste des babysittings</a>
+                    </li>
+                    <li>
+                        <a href="#">Liste des babysitteurs</a>
+                    </li>
+                    <li>
+                        <a href="#">Liste des réservations</a>
+                    </li>
+                </ul>
+            </li>
+            </li>
+        </ul>
+    </div>
+    <!-- /Left Sidebar Menu -->
+
+
+
+    <!-- Main Content -->
+
+    <div class="page-wrapper">
+        <div class="container-fluid">
+
+            <!-- Title -->
+            {% block btitle %}
+            <div class="row heading-bg  bg-blue">
+                <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+                    <h5 class="txt-light"> All For kids admin </h5>
+                </div>
+
+            </div>
+            {% endblock %}
+            {% block body %}
+            {% endblock %}
+            <!-- /Title -->
+
+            {% block footer %}
+            <!-- Footer -->
+
+            <footer class="footer container-fluid pl-30 pr-30">
+                <div class="row">
+                    <div class="col-sm-5">
+                        <a href="index.html" class="brand mr-30"><img src="{{ asset('dist/img/logo-sm.png') }}" alt="logo"/></a>
+                        <ul class="footer-link nav navbar-nav">
+                            <li class="logo-footer"><a href="#">help</a></li>
+                            <li class="logo-footer"><a href="#">terms</a></li>
+                            <li class="logo-footer"><a href="#">privacy</a></li>
+                        </ul>
+                    </div>
+                    <div class="col-sm-7 text-right">
+                        <p>2018 &copy; All For Kids All rights reserved</p>
+                    </div>
+                </div>
+            </footer>
+            {% endblock %}<!-- /Footer -->
+
+
+        </div>
+        <!-- /Main Content -->
+
+    </div>
+</div>
+
+    <!-- /#wrapper -->
+
+    <!-- JavaScript -->
+
+    <!-- jQuery -->
+    <!-- jQuery -->
+    <script src="{{ asset('vendors/bower_components/jquery/dist/jquery.min.js') }}"></script>
+
+    <!-- Bootstrap Core JavaScript -->
+    <script src="{{ asset('vendors/bower_components/bootstrap/dist/js/bootstrap.min.js') }}"></script>
+
+    <!-- Data table JavaScript -->
+    <script src="{{ asset('vendors/bower_components/datatables/media/js/jquery.dataTables.min.js') }}"></script>
+
+    <!-- Slimscroll JavaScript -->
+    <script src="{{ asset('dist/js/jquery.slimscroll.js') }}"></script>
+
+    <!-- simpleWeather JavaScript -->
+    <script src="{{ asset('vendors/bower_components/moment/min/moment.min.js') }}"></script>
+    <script src="{{ asset('vendors/bower_components/simpleWeather/jquery.simpleWeather.min.js') }}"></script>
+    <script src="{{ asset('dist/js/simpleweather-data.js') }}"></script>
+
+    <!-- Progressbar Animation JavaScript -->
+    <script src="{{ asset('vendors/bower_components/waypoints/lib/jquery.waypoints.min.js') }}"></script>
+    <script src="{{ asset('vendors/bower_components/Counter-Up/jquery.counterup.min.js') }}"></script>
+
+    <!-- Fancy Dropdown JS -->
+    <script src="{{ asset('dist/js/dropdown-bootstrap-extended.js') }}"></script>
+
+    <!-- Sparkline JavaScript -->
+    <script src="{{ asset('vendors/jquery.sparkline/dist/jquery.sparkline.min.js') }}"></script>
+
+    <!-- ChartJS JavaScript -->
+    <script src="{{ asset('vendors/chart.js/Chart.min.js') }}"></script>
+
+    <!-- Morris Charts JavaScript -->
+    <script src="{{ asset('vendors/bower_components/raphael/raphael.min.js') }}"></script>
+    <script src="{{ asset('vendors/bower_components/morris.js/morris.min.js') }}"></script>
+    <script src="{{ asset('dist/js/morris-data.js') }}"></script>
+
+    <script src="{{ asset('vendors/bower_components/jquery-toast-plugin/dist/jquery.toast.min.js') }}"></script>
+
+    <!-- Init JavaScript -->
+    <script src="{{ asset('dist/js/init.js') }}"></script>
+    <script src="{{ asset('dist/js/dashboard-data.js') }}"></script>
+
+
+</body>
+
+
+</html>

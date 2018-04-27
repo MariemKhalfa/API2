@@ -1,0 +1,255 @@
+{% extends "base.html.twig" %}
+ {% block container %}
+
+   <section>
+         <div class="container">
+             <div class="section-content">
+                 <div class="row">
+                     <div class="container">
+                         <h2 class="text-theme-color-sky line-bottom">Vous cherchez <span class="text-theme-color-red">un covoiturage</span>
+                             pour votre enfant ? <br> <span class="text-theme-color-red">All For Kids </span>vous aide à
+                             touver le meilleur covoiturage pour votre enfant !</h2>
+                         <h4 class="text-theme-color-blue">Trouver et proposer un covoiturage pour les enfants est
+                             désormais un jeu d'enfants! !</h4>
+                         <p>En effet, All For Kids est l'unnique plateforme en Tunisie destinée aux parents qui veulent
+                             proposer des covoiturages pour des enfants et qui cherchent à leur tour des covoiturages
+                             pour leurs enfants.</p>
+                         <a href="{{ path('ajouter_cov') }}" class="btn btn-flat btn-colored btn-theme-color-blue mt-15 mr-15">Proposer un
+                             covoiturage</a><a href="{{ path('chercher_cov') }}" class="btn btn-flat btn-colored btn-theme-color-yellow mt-15">Chercher
+                             Covoiturage</a>
+                     </div>
+
+                 </div>
+             </div>
+         </div>
+         <div>
+             <img alt=" " src="{{ asset('images/mariem/f2.png" class="img-responsive img-fullwidth') }}">
+         </div>
+     </section>
+{% block contenu %} {% endblock %}
+  <section>
+        <div class="container">
+            <div class="row">
+                {% for c in covs %}
+                <div class="col-sm-6 col-md-4">
+                    <div class="item">
+                        <div class="campaign bg-white maxwidth500 mb-30">
+                            <div class="thumb">
+                                <img src="{{ asset('images/mariem/6.png') }}" alt="" class="img-fullwidth">
+                                <div class="campaign-overlay"></div>
+                            </div>
+
+                            <div class="course-details clearfix p-20 pt-15">
+                                <h4 class="price-tag">Nouveau</h4>
+                                <h3 class="mt-0"><a class="text-theme-color-red" href="#">{{ c.titre }}</a></h3>
+
+                                <ul class="review_text list-inline">
+
+                                </ul>
+                                <p>C{{ c.description }} ... <a
+                                            class="text-theme-colored ml-5" href="{{ path('reserver_cov',{"id":c.id}) }}"> →</a></p>
+                                <div class="course-details-bottom mt-15">
+                                    <ul class="list-inline">
+                                        <li>Capacité<span>{{  c.nbPlaces}}</span></li>
+                                        <li>Horaires<span>{{ c.heureDep|date("h:i")}}</span></li>
+                                        <li>Date<span>{{ c.date |date("d/m/y")}}</span></li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+     {#
+     <section>
+         <div class="container">
+             <div class="row">
+                 <div class="col-sm-6 col-md-4">
+                     <div class="item">
+                         <div class="campaign bg-white maxwidth500 mb-30">
+                             <div class="thumb">
+                                 <img src="{{ asset('images/mariem/6.png') }}" alt="" class="img-fullwidth">
+                                 <div class="campaign-overlay"></div>
+                             </div>
+
+
+                             <div class="course-details clearfix p-20 pt-15">
+                                 <h4 class="price-tag">Nouveau</h4>
+                                 <h3 class="mt-0"><a class="text-theme-color-red" href="#">Raoued vers Mnihla</a></h3>
+                                 <ul class="review_text list-inline">
+                                     <li>
+                                         <div class="star-rating" title="Rated 5.00 out of 5"><span data-width="100%">5.00</span>
+                                         </div>
+                                     </li>
+                                 </ul>
+                                 <p>Maman de deux fillettes agées de 5 et 6 ans, je propose à tout parent intéressé un
+                                     covoiturage pour leurs enfants dans la zone Raoued/Mnihla.. <a
+                                             class="text-theme-colored ml-5" href="#"> →</a></p>
+                                 <div class="course-details-bottom mt-15">
+                                     <ul class="list-inline">
+                                         <li>Capacité<span>3 enfants</span></li>
+                                         <li>Horaires<span>17:50</span></li>
+                                         <li>Age<span>5ans - 6ans</span></li>
+                                     </ul>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-sm-6 col-md-4">
+                     <div class="item">
+                         <div class="campaign bg-white maxwidth500 mb-30">
+                             <div class="thumb">
+                                 <img src="{{ asset('images/mariem/6.png') }}" alt="" class="img-fullwidth">
+                                 <div class="campaign-overlay"></div>
+                             </div>
+                             <div class="course-details clearfix p-20 pt-15">
+                                 <h4 class="price-tag">Nouveau</h4>
+                                 <h3 class="mt-0"><a class="text-theme-color-lemon" href="#">Ennasr vers Menzah4</a>
+                                 </h3>
+                                 <ul class="review_text list-inline">
+                                     <li>
+                                         <div class="star-rating" title="Rated 4.50 out of 5"><span data-width="90%">4.50</span>
+                                         </div>
+                                     </li>
+                                 </ul>
+                                 <p>Covoiturage pour enfants dans la zone Ennasr/Menzah pour tout information... <a
+                                             class="text-theme-colored ml-5" href="#"> →</a></p>
+                                 <div class="course-details-bottom mt-15">
+                                     <ul class="list-inline">
+                                         <li>Capacité<span>4 enfants</span></li>
+                                         <li>Horaires<span>08:00 - 18:00</span></li>
+                                         <li>Ages<span>3ans - 6ans</span></li>
+                                     </ul>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-sm-6 col-md-4">
+                     <div class="item">
+                         <div class="campaign bg-white maxwidth500 mb-30">
+                             <div class="thumb">
+                                 <img src="{{ asset('images/mariem/6.png') }}" alt="" class="img-fullwidth">
+                                 <div class="campaign-overlay"></div>
+                             </div>
+                             <div class="course-details clearfix p-20 pt-15">
+                                 <h4 class="price-tag">Nouveau</h4>
+                                 <h3 class="mt-0"><a class="text-theme-color-sky" href="#">Sidi Bou/Carthage</a></h3>
+                                 <ul class="review_text list-inline">
+                                     <li>
+                                         <div class="star-rating" title="Rated 5.00 out of 5"><span data-width="100%">5.00</span>
+                                         </div>
+                                     </li>
+                                 </ul>
+                                 <p>Propose covoiturage pour des enfants agés de moins de six ans ... <a
+                                             class="text-theme-colored ml-5" href="#"> →</a></p>
+                                 <div class="course-details-bottom mt-15">
+                                     <ul class="list-inline">
+                                         <li>Capacité<span>4 enfants</span></li>
+                                         <li>Horaires<span>07:00 - 19:00</span></li>
+                                         <li>Ages<span> moins de 6 ans</span></li>
+                                     </ul>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-sm-6 col-md-4">
+                     <div class="item">
+                         <div class="campaign bg-white maxwidth500 mb-30">
+                             <div class="thumb">
+                                 <img src="{{ asset('images/mariem/6.png') }}" alt="" class="img-fullwidth">
+                                 <div class="campaign-overlay"></div>
+                             </div>
+                             <div class="course-details clearfix p-20 pt-15">
+                                 <h4 class="price-tag">Nouveau</h4>
+                                 <h3 class="mt-0"><a class="text-theme-color-green" href="#">Nabeul vers Tunis</a></h3>
+                                 <ul class="review_text list-inline">
+                                     <li>
+                                         <div class="star-rating" title="Rated 4.50 out of 5"><span data-width="90%">4.50</span>
+                                         </div>
+                                     </li>
+                                 </ul>
+                                 <p>Lorem ipsum dolor adipisicing elit. Praesent quossit sit amet consect adipisicing
+                                     elit quossit <a class="text-theme-colored ml-5" href="#"> →</a></p>
+                                 <div class="course-details-bottom mt-15">
+                                     <ul class="list-inline">
+                                         <li>Capacité<span>20 kids</span></li>
+                                         <li>Horaires<span>45 min</span></li>
+                                         <li>Ages<span>5y - 6y</span></li>
+                                     </ul>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-sm-6 col-md-4">
+                     <div class="item">
+                         <div class="campaign bg-white maxwidth500 mb-30">
+                             <div class="thumb">
+                                 <img src="{{ asset('images/mariem/6.png') }}" alt="" class="img-fullwidth">
+                                 <div class="campaign-overlay"></div>
+                             </div>
+                             <div class="course-details clearfix p-20 pt-15">
+                                 <h4 class="price-tag">Nouveau</h4>
+                                 <h3 class="mt-0"><a class="text-theme-color-orange" href="#">Radès vers Mégrine</a>
+                                 </h3>
+                                 <ul class="review_text list-inline">
+                                     <li>
+                                         <div class="star-rating" title="Rated 5.00 out of 5"><span data-width="100%">5.00</span>
+                                         </div>
+                                     </li>
+                                 </ul>
+                                 <p>Lorem ipsum dolor adipisicing elit. Praesent quossit sit amet consect adipisicing
+                                     elit quossit <a class="text-theme-colored ml-5" href="#"> →</a></p>
+                                 <div class="course-details-bottom mt-15">
+                                     <ul class="list-inline">
+                                         <li>Capacity<span>20 kids</span></li>
+                                         <li>Duration<span>45 min</span></li>
+                                         <li>Age<span>5y - 6y</span></li>
+                                     </ul>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+                 <div class="col-sm-6 col-md-4">
+                     <div class="item">
+                         <div class="campaign bg-white maxwidth500 mb-30">
+                             <div class="thumb">
+                                 <img src="{{ asset('images/mariem/6.png') }}" alt="" class="img-fullwidth">
+                                 <div class="campaign-overlay"></div>
+                             </div>
+                             <div class="course-details clearfix p-20 pt-15">
+                                 <h4 class="price-tag">Nouveau</h4>
+                                 <h3 class="mt-0"><a class="text-theme-color-red" href="#">Ariana vers Tunis</a></h3>
+                                 <ul class="review_text list-inline">
+                                     <li>
+                                         <div class="star-rating" title="Rated 5.00 out of 5"><span data-width="100%">5.00</span>
+                                         </div>
+                                     </li>
+                                 </ul>
+                                 <p>Lorem ipsum dolor adipisicing elit. Praesent quossit sit amet consect adipisicing
+                                     elit quossit <a class="text-theme-colored ml-5" href="#"> →</a></p>
+                                 <div class="course-details-bottom mt-15">
+                                     <ul class="list-inline">
+                                         <li>Capacité<span>2 enfants</span></li>
+                                         <li>Duration<span>45 min</span></li>
+                                         <li>Age<span>5y - 6y</span></li>
+                                     </ul>
+                                 </div>
+                             </div>
+                         </div>
+                     </div>
+                 </div>
+             </div>
+         </div>
+     </section>#}
+
+
+ {% endblock %}

@@ -1,0 +1,105 @@
+    {% trans_default_domain 'FOSUserBundle' %}
+
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+ <center>   <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xs-offset-0 col-sm-offset-0 col-md-offset-3 col-lg-offset-3 toppad" >
+        <!-- left column -->
+        <div class="col-md-3">
+            <div class="text-center">
+                <img src="{{ app.user.photo }}" class="avatar img-circle" alt="avatar">
+              {#  <h6>Upload a different photo...</h6>
+
+                <input type="file" class="form-control">#}
+            </div>
+        </div>
+
+        <!-- edit form column -->
+        <div class="col-md-9 personal-info">
+
+            <h3>informations personnelles</h3>
+
+            <form class="form-horizontal" role="form">
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"></label>
+                    <div class="col-lg-8">
+                        {{ form_row(form.prenom,{'attr':{'class': 'form-control'} }) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"></label>
+                    <div class="col-lg-8">
+                        {{ form_row(form.nom,{'attr':{'class': 'form-control'} }) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"></label>
+                    <div class="col-lg-8">
+                        {{ form_row(form.CIN,{'attr':{'class': 'form-control'} }) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"></label>
+                    <div class="col-lg-8">
+                        {{ form_row(form.email,{'attr':{'class': 'form-control'} }) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-lg-3 control-label"></label>
+                    <div class="col-lg-8">
+                        <div class="ui-select">
+                            {{ form_row(form.username,{'attr':{'class': 'form-control'} }) }}
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        {{ form_row(form.sexe,{'attr':{'class': 'form-control'} }) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        {{ form_row(form.dateNaissance,{'attr':{'class': 'form-control'} }) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        {{ form_row(form.ville,{'attr':{'class': 'form-control'} }) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        {{ form_row(form.rue,{'attr':{'class': 'form-control'} }) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        {{ form_row(form.codePostal,{'attr':{'class': 'form-control'} }) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-8">
+                        {{ form_row(form.telephone,{'attr':{'class': 'form-control'} }) }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-md-3 control-label"></label>
+                    <div class="col-md-8">
+                        <a type="button" class="btn btn-primary" href="{{ path('fos_user_change_password') }}" >Modifier mot de passe</a>
+                        <input type="submit" class="btn btn-primary" value="{{ 'Enregistrer'|trans }}" />
+                        <span></span>
+                        <input type="reset" class="btn btn-default" value="Annuler ">
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+    </div>
+    <hr></center>
+
+
+
+{{ form_end(form) }}

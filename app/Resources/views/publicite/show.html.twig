@@ -1,0 +1,62 @@
+{% extends 'backBase.html.twig' %}
+
+{% block body %}
+
+
+    <div class="col-lg-6 col-sm-6 col-xs-12">
+        <div class="panel panel-default card-view">
+            <div class="panel-heading">
+                <div class="pull-left">
+                    <h6 class="panel-title txt-dark">La publicite : {{ publicite.intitule }}</h6>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+            <div class="panel-wrapper collapse in">
+                <div class="panel-body task-panel">
+                    <div class="list-group mb-0">
+                        <a href="#" class="list-group-item">
+                            <span class="badge badge-info">{{ publicite.id }}</span>
+                            <i class=" icon-target"></i> Id de la publicite
+                        </a>
+                        <a href="#" class="list-group-item">
+                            <span class="badge  badge-success">{{ publicite.intitule }}</span>
+                            <i class="ti-blackboard"></i> Nom de la publicite
+                        </a>
+
+                        <a href="#" class="list-group-item">
+                            <span class="badge  badge-success">{{ publicite.nomEnsegne }}</span>
+                            <i class="icon-pencil"></i> Nom di magasin
+                        </a>
+
+                        <a href="#" class="list-group-item">
+                            <span class="badge  badge-success"> <img style="width:40px " src="{{ asset('uploads/brochures/'~publicite.imagePub) }}"> </span>
+                            <i class="icon-picture"></i> Image du magasin
+                        </a>
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div
+
+
+
+
+
+
+    <ul>
+        <li>
+            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('publicite_index') }}">Back to the list</a>
+        </li>
+        <li>
+            <a class="label label-info capitalize-font inline-block ml-10" href="{{ path('publicite_edit', { 'id': publicite.id }) }}">Edit</a>
+        </li>
+        <li>
+            {{ form_start(delete_form) }}
+                <input type="submit" value="Delete">
+            {{ form_end(delete_form) }}
+        </li>
+    </ul>
+</div>
+{% endblock %}

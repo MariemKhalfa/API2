@@ -1,0 +1,22 @@
+{% extends "base.html.twig" %}
+ {% block container %}
+     <div class="accountbox__inner" >
+         <h4>continue to register</h4>
+         <div class="accountbox__login" >
+             {{ render(controller('fos_user.registration.controller:registerAction')) }}
+             <form action="#">
+
+                 <div class="accountbox-login__others text-center">
+                     <h6>or register with</h6>
+                     <ul class="dacre__social__link d-flex justify-content-center">
+                         <li class="facebook"><a target="_blank" href="https://www.facebook.com/"><span class="ti-facebook"></span></a></li>
+                         <li class="twitter"><a target="_blank" href="https://twitter.com/"><span class="ti-twitter"></span></a></li>
+                         <li class="pinterest"><a target="_blank" href="#"><span class="ti-google"></span></a></li>
+                     </ul>
+                 </div>
+             </form>
+         </div>
+         <span class="accountbox-close-button"><i class="zmdi zmdi-close"></i></span>
+     </div>
+     <h3>Have an account ? Login Fast</h3>
+ {% endblock %}

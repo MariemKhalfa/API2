@@ -1,0 +1,109 @@
+{% extends 'backBase.html.twig' %}
+{% block btitle %}
+
+
+    <div class="row heading-bg bg-pink">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h5 class="txt-light">All For Kids admin</h5>
+        </div>
+
+        <!-- Breadcrumb -->
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            <ol class="breadcrumb">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="#"><span>Babysitting</span></a></li>
+                <li class="active"><span>Liste des babysittings</span></li>
+            </ol>
+        </div>
+        <!-- /Breadcrumb -->
+
+    </div>
+{% endblock %}
+{% block body %}
+
+
+
+
+    <!-- Main Content -->
+    <div class="page-wrapper">
+        <div class="container-fluid">
+
+            <!-- Title -->
+
+            <!-- /Title -->
+
+            <div class="card">
+                <div class="card-header">
+
+                </div>
+                <div class="card-body">
+
+                </div><form role="search" action="{{ path('list_babysittings_admin') }}" >
+                    <div class="input-group mb-15" >
+                        <input width="20px" type="text" id="example-input1-group2" name="filter" class="form-control" placeholder="recherche par babysitteur">
+                        <span class="input-group-btn">
+													<button type="button" class="btn  btn-default"><i class="fa fa-search"></i></button>
+													</span>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-12">
+                <div class="col-sm-12">
+                    <div class="panel panel-default card-view">
+                        <div class="panel-heading">
+
+                            <div class="clearfix"></div>
+                        </div>
+                        <div class="panel-wrapper collapse in">
+                            <div class="panel-body">
+                                <div class="table-wrap">
+                                    <div class="table-responsive">
+                                        <table class="table display product-overview" id="statement">
+                                            <thead>
+                                            <tr role="row">
+                                                <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Titre</th>
+                                                <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">{{ knp_pagination_sortable(babysitteur,'Babysitteur','m.nom') }}</th>
+                                                <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Date</th>
+                                                <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Heure début</th>
+                                                <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Heure fin</th>
+                                                <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Adresse</th>
+
+                                                <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Nombre de places</th>
+                                                {#                                                <th class="sorting_asc" tabindex="0" aria-controls="bootstrap-data-table" rowspan="1" colspan="1" aria-sort="ascending" aria-label="Name: activate to sort column descending" style="width: 66px;">Options</th>#}
+
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            {% for b in babysitteur %}
+                                                <tr>
+                                                    <td>{{ b.titre }}</td>
+                                                    <td>{{b.babysitteur }}</td>
+                                                    <td>{{ b.date|date("d-m-y")}}</td>
+                                                    <td>{{ b.heureDeb|date('h:i') }}</td>
+                                                    <td>{{ b.heureFin|date('h:i') }}</td>
+                                                    <td>{{ b.adresse}}</td>
+                                                    <td>{{ b.nbrEnfants }}</td>
+                                                </tr>
+                                            {% endfor %}
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="navigation text-center">
+            {{ knp_pagination_render(babysitteur) }}
+        </div>
+    </div>
+
+
+
+
+{% endblock %}

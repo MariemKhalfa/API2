@@ -1,0 +1,131 @@
+{% extends 'backBase.html.twig' %}
+{% block btitle %}
+
+
+    <div class="row heading-bg bg-blue">
+        <div class="col-lg-3 col-md-4 col-sm-4 col-xs-12">
+            <h5 class="txt-light">All For Kids admin</h5>
+        </div>
+
+        <!-- Breadcrumb -->
+        <div class="col-lg-9 col-sm-8 col-md-8 col-xs-12">
+            <ol class="breadcrumb">
+                <li><a href="index.html">Dashboard</a></li>
+                <li><a href="#"><span>Medecins</span></a></li>
+                <li class="active"><span>Ajouter Médecin</span></li>
+            </ol>
+        </div>
+        <!-- /Breadcrumb -->
+
+    </div>
+{% endblock %}
+{% block body %}
+{{ form_start(form) }}
+
+
+    <!-- Row -->
+    <div class="row">
+        <div class="col-md-6">
+            <div class="panel panel-default card-view">
+                <div class="panel-heading">
+                    <div class="pull-left">
+                        <h6 class="panel-title txt-dark">Ajouter Medecin</h6>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+                <div class="panel-wrapper collapse in">
+                    <div class="panel-body">
+                        <div class="row">
+                            <div class="col-sm-12 col-xs-12">
+                                <div class="form-wrap">
+
+
+                                        <div class="form-group">
+                                            <label for="exampleInputuname_4" class="col-sm-3 control-label">Nom*</label>
+                                            <div class="col-sm-9">
+                                                <div class="input-group">
+                                                    {{ form_widget(form.nom,{attr: {class: 'form-control'} }) }}
+                                                    <div class="input-group-addon"><i class="icon-user"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputuname_4" class="col-sm-3 control-label">Prenom*</label>
+                                            <div class="col-sm-9">
+                                                <div class="input-group">
+                                                    {{ form_widget(form.prenom,{attr: {class: 'form-control'} }) }}
+                                                    <div class="input-group-addon"><i class="icon-user"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputEmail_4" class="col-sm-3 control-label">Email*</label>
+                                            <div class="col-sm-9">
+                                                <div class="input-group">
+                                                    {{ form_widget(form.email,{attr: {class: 'form-control'} }) }}
+                                                    <div class="input-group-addon"><i class="icon-envelope-open"></i></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputweb_41" class="col-sm-3 control-label">Telephone</label>
+                                            <div class="col-sm-9">
+                                                <div class="input-group">
+                                                    {{ form_widget(form.telephone,{attr: {class: 'form-control'} }) }}
+                                                    <div class="input-group-addon"><i ></i></div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    <div class="form-group">
+                                        <label for="exampleInputweb_41" class="col-sm-3 control-label">Adresse</label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group">
+                                                {{ form_widget(form.adresse,{attr: {class: 'form-control'} }) }}
+                                                <div class="input-group-addon"><i ></i></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputweb_41" class="col-sm-3 control-label">photo</label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group">
+                                                {{ form_widget(form.image,{attr: {class: 'form-control'} }) }}
+                                                <div class="input-group-addon"><i ></i></div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputweb_41" class="col-sm-3 control-label">Specialite</label>
+                                        <div class="col-sm-9">
+                                            <div class="input-group">
+                                                {{ form_widget(form.specialite,{attr: {class: 'select2 select2-multiple'} }) }}
+
+
+                                            </div>
+                                        </div>
+
+                                    </div>
+                                    <br>
+                                    <br>
+                                    <div class="form-group mb-0">
+                                        <div class="col-sm-offset-3 col-sm-9">
+
+                                            {{ form_widget(form.Ajouter,{attr: {class: 'btn btn-info' }}) }}
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+{{ form_end(form) }}
+
+
+
+{% endblock %}

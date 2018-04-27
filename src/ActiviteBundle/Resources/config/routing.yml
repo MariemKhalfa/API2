@@ -1,0 +1,50 @@
+activite_homepage:
+    path:     /homepage
+    defaults: { _controller: ActiviteBundle:Default:index }
+
+activite_viewActivite:
+    path:     /activite/view
+    defaults: { _controller: ActiviteBundle:Activite:afficheBack }
+
+
+activite_detailsActivite:
+    path:     /activite/details
+    defaults: { _controller: ActiviteBundle:Activite:ActiviteDetails }
+
+
+activite_list:
+    path:     /activite/liste
+    defaults: { _controller: ActiviteBundle:Activite:listFront }
+
+
+activite_createActivite:
+    path:     /activite/create
+    defaults: { _controller: ActiviteBundle:Activite:createActivite }
+
+
+activite_afficherActivite:
+    path:     /activite/afficher
+    defaults: { _controller: ActiviteBundle:Activite:afficheBack }
+
+
+activite_modifBackEnseignant:
+    path:     /ModificationActivite/{id}
+    defaults: { _controller: ActiviteBundle:Activite:updateActivite  }
+
+activite_updateActivite:
+    path:     /activite/update/{id}
+    defaults: { _controller: ActiviteBundle:Activite:updateActivite }
+
+
+activite_deleteActivite:
+    path:     /activite/delete/{id}
+    defaults: { _controller: ActiviteBundle:Activite:deleteActivite }
+
+
+activite_afficherFrontctivite:
+    path:     /activite/affich
+    defaults: { _controller: ActiviteBundle:Activite:viewActivite }
+
+
+
+

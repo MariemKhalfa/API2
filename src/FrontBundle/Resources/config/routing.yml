@@ -1,0 +1,24 @@
+front_homepage:
+    path:     /user
+    defaults: { _controller: FrontBundle:Default:index }
+front_contactpage:
+    path:     /ContactUs
+    defaults: { _controller: FrontBundle:Default:contactUs }
+front_aboutUsPage:
+    path:     /aboutUs
+    defaults: { _controller: FrontBundle:Default:aboutUs }
+
+admin_login:
+    path:  /admin/login
+    defaults: { _controller: AppBundle:Default:adminLogin }
+
+admin_login_check:
+    path:  /admin/login_check
+    defaults: { _controller: FOSUserBundle:Security:check }
+
+admin_logout:
+    path:  /admin/logout
+    defaults: { _controller: FOSUserBundle:Security:logout }
+user_register:
+    path:  /register
+    defaults: { _controller: FrontBundle:Default:register }

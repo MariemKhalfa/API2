@@ -1,0 +1,64 @@
+{% extends '::base.html.twig' %}
+{% block container %}
+    <!-- Start Bradcaump area -->
+    <div class="ht__bradcaump__area">
+        <div class="ht__bradcaump__container">
+            <img src="{{ asset('images/bg-png/6.png') }}" alt="bradcaump images">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="bradcaump__inner text-center">
+                            <h2 class="bradcaump-title">Nos Activités</h2>
+                            <nav class="bradcaump-inner">
+                                <a class="breadcrumb-item" href="index-2.html">Home</a>
+                                <span class="brd-separetor"><img src="{{ asset('images/icons/brad.png') }}" alt="separator images"></span>
+                                <span class="breadcrumb-item active">Nos Activités</span>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Start Our Event Area -->
+    <div class="dcare__event__area bg--white section-padding--lg">
+        <div class="container">
+            <div class="row event-grid-page">
+
+                {% for a in activite %}
+                    <!-- Start Single Event -->
+                    <div class="col-lg-4 col-md-6 col-sm-12">
+                        <div class="dcare__event">
+                            <div class="event__content">
+                                <div class="event__pub">
+                                    <div class="event__date">
+                                        <span class="date">{{ a.date|date('d') }}</span><span>th</span>
+                                    </div>
+                                    <ul class="event__time">
+                                        <li>{{ a.date|date('M') }}, <i class="fa fa-clock-o"></i>{{ a.heure|date('H:i') }} </li>
+                                        <li><i class="fa fa-home"></i>{{ a.type }}</li>
+                                    </ul>
+                                </div>
+                                <div class="event__inner">
+                                    <p><a href="{{ path('contactUs') }}"">{{ a.adresse }}</a></p>
+                                </div>
+                                <ul class="event__btn">
+
+                                </ul>
+                            </div>
+                            <div class="event__thumb">
+                                <a href="{{ path('activite_detailsActivite') }}">
+                                    <img src="{{ asset('uploads/images/'~ a.image ) }}" width="200%">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Start Single Event -->
+                {% endfor %}
+            </div>
+        </div>
+
+    </div><!-- .animated -->
+    <!-- End Our Event Area -->
+    <!-- End Bradcaump area -->
+{% endblock %}

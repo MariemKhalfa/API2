@@ -1,0 +1,24 @@
+promotions_index:
+    path:     /promotion
+    defaults: { _controller: "BackOfficeBundle:Promotions:index" }
+    methods:  GET
+
+promotions_show:
+    path:     /{id}/show
+    defaults: { _controller: "BackOfficeBundle:Promotions:show" }
+    methods:  GET
+
+promotions_new:
+    path:     /new
+    defaults: { _controller: "BackOfficeBundle:Promotions:new" }
+    methods:  [GET, POST]
+
+promotions_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "BackOfficeBundle:Promotions:edit" }
+    methods:  [GET, POST]
+
+promotions_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "BackOfficeBundle:Promotions:delete" }
+    methods:  DELETE
