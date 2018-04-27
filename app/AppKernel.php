@@ -32,6 +32,7 @@ class AppKernel extends Kernel
             new BackOfficeBundle\BackOfficeBundle(),
             new CMEN\GoogleChartsBundle\CMENGoogleChartsBundle(),
             new Mgilet\NotificationBundle\MgiletNotificationBundle(),
+            new ApiBundle\ApiBundle(),
         ];
 
         if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
