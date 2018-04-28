@@ -1,3 +1,6 @@
 recette_homepage:
     path:     /es
     defaults: { _controller: RecetteBundle:Default:index }
+listAjax:
+      path:     /listAjax
+      defaults: { _controller: RecetteBundle:Default:AllRecetteJson }

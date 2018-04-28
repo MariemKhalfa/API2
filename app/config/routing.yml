@@ -37,7 +37,7 @@ garderie:
 
 recette:
     resource: "@RecetteBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /Recette
 
 e_learning:
     resource: "@ELearningBundle/Resources/config/routing.yml"

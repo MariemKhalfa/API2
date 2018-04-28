@@ -39,4 +39,5 @@ class UserRepository extends EntityRepository
             ->createQuery(" select u from FrontBundle:User u WHERE u.covoiturage=:1 ");
         return $query->getResult();
     }
+
 }

@@ -4,7 +4,10 @@ namespace ELearningBundle\Controller;
 
 use ELearningBundle\Form\ModificationEnseignant;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
 
 class DefaultController extends Controller
 {
@@ -68,5 +71,12 @@ class DefaultController extends Controller
             $em->flush();
         }
         return $this->render('@ELearning/Enseignant/ajoutEnseignant.html.twig');
+    }
+    public function AllEnseignantJsonAction()
+    {
+        $Enseignant=$this->getDoctrine()->getManager()->getRepository('FrontBundle:User')->findRoleEnseignant();
+        $Serializer= new Serializer([new ObjectNormalizer()]);
+        $formatted = $Serializer->normalize($Enseignant);
+        return new JsonResponse($formatted);
     }
 }
