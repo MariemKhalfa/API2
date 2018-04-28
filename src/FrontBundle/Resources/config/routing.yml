@@ -22,3 +22,6 @@ admin_logout:
 user_register:
     path:  /register
     defaults: { _controller: FrontBundle:Default:register }
+user_loginMobile:
+    path:  /loginMobile
+    defaults: { _controller: FrontBundle:Default:loginMobile}
