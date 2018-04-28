@@ -1,20 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="145c28f5-a1ef-4d03-966c-ce3a5fdf8483" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/API.iml" afterPath="$PROJECT_DIR$/.idea/API.iml" />
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Composer_27_04_18_12_38_c.xml" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Composer_28_04_18_10_36_c.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_27_04_18_12_43_s.xml" afterPath="$PROJECT_DIR$/.idea/commandlinetools/Symfony_28_04_18_10_37_s.xml" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/app/config/parameters.yml" afterPath="$PROJECT_DIR$/app/config/parameters.yml" />
-      <change beforePath="$PROJECT_DIR$/app/config/routing.yml" afterPath="$PROJECT_DIR$/app/config/routing.yml" />
-      <change beforePath="$PROJECT_DIR$/src/ELearningBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/ELearningBundle/Controller/DefaultController.php" />
-      <change beforePath="$PROJECT_DIR$/src/ELearningBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/ELearningBundle/Resources/config/routing.yml" />
-      <change beforePath="$PROJECT_DIR$/src/FrontBundle/Repository/UserRepository.php" afterPath="$PROJECT_DIR$/src/FrontBundle/Repository/UserRepository.php" />
-      <change beforePath="$PROJECT_DIR$/src/RecetteBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/RecetteBundle/Controller/DefaultController.php" />
-      <change beforePath="$PROJECT_DIR$/src/RecetteBundle/Entity/Recette.php" afterPath="$PROJECT_DIR$/src/RecetteBundle/Entity/Recette.php" />
-      <change beforePath="$PROJECT_DIR$/src/RecetteBundle/Resources/config/routing.yml" afterPath="$PROJECT_DIR$/src/RecetteBundle/Resources/config/routing.yml" />
-    </list>
+    <list default="true" id="145c28f5-a1ef-4d03-966c-ce3a5fdf8483" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -117,8 +104,8 @@
       <file leaf-file-name="routing.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/ELearningBundle/Resources/config/routing.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="301">
-              <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="29" />
+            <state relative-caret-position="186">
+              <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -247,7 +234,7 @@
       <path value="$PROJECT_DIR$/vendor/symfony/swiftmailer-bundle" />
     </include_path>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds" extendedState="7">
     <option name="x" value="-7" />
     <option name="width" value="697" />
     <option name="height" value="735" />
@@ -443,7 +430,7 @@
       <workItem from="1524862792158" duration="1270000" />
       <workItem from="1524908009167" duration="1149000" />
       <workItem from="1524909186170" duration="1080000" />
-      <workItem from="1524910276372" duration="604000" />
+      <workItem from="1524910276372" duration="661000" />
     </task>
     <task id="LOCAL-00001" summary="Car entity">
       <created>1524859518133</created>
@@ -456,10 +443,10 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="10055000" />
+    <option name="totallyTimeSpent" value="10112000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="754" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="754" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21083455" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -918,8 +905,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/ELearningBundle/Resources/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="301">
-          <caret line="19" column="15" lean-forward="true" selection-start-line="19" selection-start-column="15" selection-end-line="19" selection-end-column="29" />
+        <state relative-caret-position="186">
+          <caret line="14" column="25" lean-forward="false" selection-start-line="14" selection-start-column="25" selection-end-line="14" selection-end-column="25" />
           <folding />
         </state>
       </provider>
