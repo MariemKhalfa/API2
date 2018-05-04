@@ -49,11 +49,35 @@ class Evenement
     private $adresse;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
      * @ORM\Column(name="date", type="date")
      */
     private $date;
+
+
+    /**
+     * @ORM\Column(type="string")
+     */
+    private $description;
+
+    /**
+     * @return mixed
+     */
+    public function getDescription()
+    {
+        return $this->description;
+    }
+
+    /**
+     * @param mixed $description
+     */
+    public function setDescription($description)
+    {
+        $this->description = $description;
+    }
+
+
 
     /**
      * @var string
@@ -88,7 +112,7 @@ class Evenement
     public function setIntitule($intitule)
     {
         $this->intitule = $intitule;
-    
+
         return $this;
     }
 
@@ -112,7 +136,7 @@ class Evenement
     public function setNbParticipants($nbParticipants)
     {
         $this->nbParticipants = $nbParticipants;
-    
+
         return $this;
     }
 
@@ -136,7 +160,7 @@ class Evenement
     public function setBudget($budget)
     {
         $this->budget = $budget;
-    
+
         return $this;
     }
 
@@ -153,21 +177,21 @@ class Evenement
     /**
      * Set date
      *
-     * @param \DateTime $date
+     * @param \Date $date
      *
      * @return Evenement
      */
     public function setDate($date)
     {
         $this->date = $date;
-    
+
         return $this;
     }
 
     /**
      * Get date
      *
-     * @return \DateTime
+     * @return \Date
      */
     public function getDate()
     {

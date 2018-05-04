@@ -10,4 +10,13 @@ namespace EvenementBundle\Repository;
  */
 class EvenementRepository extends \Doctrine\ORM\EntityRepository
 {
+
+    public function findEvenement($key)
+    {
+        $query=$this->getEntityManager()
+            ->createQuery(" Select  u from EvenementBundle:Evenement u where u.intitule LIKE :intitule ")
+            ->setParameter('intitule','%'.$key.'%');
+
+        return $query->getResult();
+    }
 }

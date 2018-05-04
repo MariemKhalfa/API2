@@ -16,3 +16,14 @@ Evenement_supprimer:
 evenement_parent:
     path:     /evenementParent
     defaults: { _controller: EvenementBundle:Evenement:listFront }
+evenement_listemobile:
+    path:     /evenement/liste
+    defaults: { _controller: EvenementBundle:Evenement:liste }
+
+evenement_search:
+    path:     /evenement/search/{key}
+    defaults: { _controller: EvenementBundle:Evenement:search }
+
+evenement_addM:
+    path:     /evenement/ajout
+    defaults: { _controller: EvenementBundle:Evenement:addM}

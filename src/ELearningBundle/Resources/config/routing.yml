@@ -28,3 +28,9 @@ ajoutDemandeAjax:
 AfficherAllDemande:
     path:     /AllDemande/{idm}
     defaults: { _controller: ELearningBundle:DemandeInscription:AfficherDemandeAjax}
+AccepterDemande:
+    path:     /accepte/{id}
+    defaults: { _controller: ELearningBundle:DemandeInscription:AccepterDemandeJson}
+RefuserDemande:
+    path:     /refuse/{id}
+    defaults: { _controller: ELearningBundle:DemandeInscription:RefuserDemandeJson}

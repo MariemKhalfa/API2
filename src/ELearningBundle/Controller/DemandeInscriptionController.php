@@ -126,4 +126,14 @@ class DemandeInscriptionController extends Controller
         $formatted = $Serializer->normalize($array);
         return new JsonResponse($formatted);
     }
+    public function AccepterDemandeJsonAction($id)
+    {
+        $em = $this->getDoctrine();
+        $em->getRepository("ELearningBundle:DemandeInscription")->AccepterDemande($id);
+    }
+    public function RefuserDemandeJsonAction($id)
+    {
+        $em = $this->getDoctrine();
+        $em->getRepository("ELearningBundle:DemandeInscription")->RefuserDemande($id);
+    }
 }
