@@ -183,4 +183,70 @@ return $this->render("@Activite/pages/create.html.twig",['form' =>$form->createV
         return $this->render('ActiviteBundle:pages:ActiviteDetails.html.twig',array("modele"=>$activite,"activite"=>$voitures));
     }
 
+    function listAction(Request $request)
+    {
+        $activite=$this->getDoctrine()->getRepository('ActiviteBundle:Activite')->findAll();
+
+        $em = $this->getDoctrine()->getManager();
+
+
+
+        $array = array();
+        foreach ($activite as $e) {
+            $date = $e->getDate()->format('Y-m-d');
+
+
+            array_push($array,array(
+                "id" => $e->getId(),
+                "description" => $e->getDescription(),
+                "date" => $date,
+                "adresse" => $e->getAdresse(),
+                "ageMin" => $e->getAgeMin(),
+                "heure" => $e->getHeure(),
+                "type" => $e->getType(),
+
+
+            ));
+        }
+        $serializer = new Serializer([new ObjectNormalizer()]);
+
+        $jsonContent = $serializer->normalize($array);
+        return new Response(json_encode($jsonContent));
+
+    }
+
+    public function newActAction(Request $request )
+    {
+        $em=$this->getDoctrine()->getManager();
+        $activite=new Activite();
+        $activite->setType($request->get('type'));
+        $activite->setDescription($request->get('description'));
+        $activite->setAdresse($request->get('adresse'));
+        $activite->setAgeMin($request->get('ageMin'));
+        $activite->setHeure($request->get('heure'));
+        $date= new \DateTime($request->get("date"));
+        $activite->setDate($date);
+
+
+        $em->persist($activite);
+        $em->flush();
+        $serializer=new Serializer([new ObjectNormalizer()]);
+        $formatted=$serializer->normalize($activite);
+        return new JsonResponse($formatted);
+    }
+
+    public function listAllAction(Request $request)
+    {
+        $activite= new Activite();
+        $content =$request->getContent();
+
+        $em = $this->getDoctrine()->getManager();
+        $activit= $em->getRepository('ActiviteBundle:Activite')->findActivite($request->get('key'));
+
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $jsonContent = $serializer->normalize($activit);
+        return new Response(json_encode($jsonContent));
+
+
+    }
 }
