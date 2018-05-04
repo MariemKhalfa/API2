@@ -37,5 +37,9 @@ class EnfantRepository extends EntityRepository
         echo "kkk";
         return $qb->getRe;
     }
+    function findEnfantsAjax($id){
+        $query=$this->getEntityManager()->createQuery("select e.pseudonyme from FrontBundle:Enfant e where  e.cin=:id")->setParameter('id',$id);
+        return $query->getResult();
+    }
 
 }

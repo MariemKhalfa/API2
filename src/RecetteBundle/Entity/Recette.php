@@ -59,6 +59,29 @@ class Recette
      * @ORM\Column(name="dislike_count", type="integer")
      */
     private $dislikeCount=0;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire_count", type="integer")
+     */
+    private $commentaireCount=0;
+
+    /**
+     * @return string
+     */
+    public function getCommentaireCount()
+    {
+        return $this->commentaireCount;
+    }
+
+    /**
+     * @param string $commentaireCount
+     */
+    public function setCommentaireCount($commentaireCount)
+    {
+        $this->commentaireCount = $commentaireCount;
+    }
+
 
 
 
