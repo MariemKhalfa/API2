@@ -4,3 +4,12 @@ recette_homepage:
 listAjax:
       path:     /listAjax
       defaults: { _controller: RecetteBundle:Default:AllRecetteJson }
+listCommentaireAjax:
+      path:     /CommentaireAjax/{id}
+      defaults: { _controller: RecetteBundle:Default:AllCommentaireJson}
+ajoutCommentaireAjax:
+      path:     /AjoutCommentaireAjax
+      defaults: { _controller: RecetteBundle:Default:AjoutCommentaireJson}
+UpdateCommentaireRecetteAjax:
+      path:     /UpdateCommentaireAjax/{id}
+      defaults: { _controller: RecetteBundle:Default:UpdateRecetteJson}

@@ -10,4 +10,24 @@ namespace RecetteBundle\Repository;
  */
 class RecetteRepository extends \Doctrine\ORM\EntityRepository
 {
+    public function verif($recette_id)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery("
+            select  j.photo,j.nom,j.prenom,v.commentaire,v.id,IDENTITY (v.recetteId) as recette_id from RecetteBundle:Commentaire v JOIN FrontBundle:User j WITH j.id=v.userId
+            WHERE v.recetteId=:recette_id 
+            ");
+        $query->setParameter('recette_id', $recette_id);
+        return $query->getResult();
+    }
+    public function updateCom($recette_id)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery("
+            update  RecetteBundle:Recette v set v.commentaireCount = v.commentaireCount + 1 
+            WHERE v.id=:recette_id 
+            ");
+        $query->setParameter('recette_id', $recette_id);
+        return $query->getResult();
+    }
 }

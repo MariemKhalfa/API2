@@ -19,3 +19,12 @@ e_learning_suppBackEnseignant:
 e_learning_AllEnseignantAjax:
     path:     /EnseignantAjax
     defaults: { _controller: ELearningBundle:Default:AllEnseignantJson}
+findEnfant:
+    path:     /mesEnfant/{idp}
+    defaults: { _controller: ELearningBundle:DemandeInscription:Findenfant}
+ajoutDemandeAjax:
+     path:     /ajoutDemande
+     defaults: { _controller: ELearningBundle:DemandeInscription:AjoutDemandeInscriptionJson}
+AfficherAllDemande:
+    path:     /AllDemande/{idm}
+    defaults: { _controller: ELearningBundle:DemandeInscription:AfficherDemandeAjax}

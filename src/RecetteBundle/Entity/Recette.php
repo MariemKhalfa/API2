@@ -19,7 +19,7 @@ class Recette
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="AUTO")
      */
-    private $id;
+    public $id;
 
     /**
      * @var string
@@ -47,6 +47,53 @@ class Recette
      * @ORM\Column(name="photo", type="string", length=300,nullable=true)
      */
     private $photo;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="like_count", type="integer")
+     */
+    private $likeCount=0;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="dislike_count", type="integer")
+     */
+    private $dislikeCount=0;
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="commentaire_count", type="integer")
+     */
+    private $commentaireCount=0;
+
+    /**
+     * @return string
+     */
+    public function getCommentaireCount()
+    {
+        return $this->commentaireCount;
+    }
+
+    /**
+     * @param string $commentaireCount
+     */
+    public function setCommentaireCount($commentaireCount)
+    {
+        $this->commentaireCount = $commentaireCount;
+    }
+
+
+
+
+    /**
+     * Get id
+     *
+     * @return int
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
 
     /**
      * @return string
@@ -64,15 +111,6 @@ class Recette
         $this->photo = $photo;
     }
 
-    /**
-     * Get id
-     *
-     * @return int
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
 
     /**
      * Set video
@@ -145,5 +183,38 @@ class Recette
     {
         return $this->titre;
     }
+
+    /**
+     * @return string
+     */
+    public function getLikeCount()
+    {
+        return $this->likeCount;
+    }
+
+    /**
+     * @param string $likeCount
+     */
+    public function setLikeCount($likeCount)
+    {
+        $this->likeCount = $likeCount;
+    }
+
+    /**
+     * @return string
+     */
+    public function getDislikeCount()
+    {
+        return $this->dislikeCount;
+    }
+
+    /**
+     * @param string $dislikeCount
+     */
+    public function setDislikeCount($dislikeCount)
+    {
+        $this->dislikeCount = $dislikeCount;
+    }
+
 }
 
