@@ -7,16 +7,20 @@ new_bab:
     defaults: { _controller: ApiBundle:Babysitting:newBab }
 
 find_bab:
-    path:     /findBab/{id}/{date}
+    path:     /findBab/{id}
     defaults: { _controller: ApiBundle:Babysitting:findBab }
 
 all_bab:
-    path:     /allBab/{id}
-    defaults: { _controller: ApiBundle:Babysitting:allBab }
+    path:     /allBab1
+    defaults: { _controller: ApiBundle:Babysitting:allBab1 }
 
 update_bab:
     path:     /updateBab/{id}
     defaults: { _controller: ApiBundle:Babysitting:updateBab }
+    
+delete_bab:
+    path:     /deleteBab/{id}
+    defaults: { _controller: ApiBundle:Babysitting:deleteBab }    
 
 new_cov:
     path:     /newCov
@@ -28,7 +32,7 @@ find_cov:
 
 all_cov:
     path:     /allCov/{id}
-    defaults: { _controller: AkApiBundle:Covoiturage:allCov }
+    defaults: { _controller: ApiBundle:Covoiturage:allCov }
 new_voit:
     path:     /newVoit
     defaults: { _controller: ApiBundle:Car:newVoit }

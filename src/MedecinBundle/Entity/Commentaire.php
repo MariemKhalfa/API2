@@ -48,7 +48,7 @@ class Commentaire
 
 
     /**
-     * Get id.
+     * Get id
      *
      * @return int
      */

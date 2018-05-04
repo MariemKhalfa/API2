@@ -17,16 +17,21 @@ class CovoiturageController extends Controller
         $em=$this->getDoctrine()->getManager();
         $cov= new Covoiturage();
         $cov->setTitre($request->get('tit'));
-        $cov->setDate($request->get('dat'));
-        $cov->setHeureDep($request->get('hDep'));
+        $date=new \DateTime($request->get("dat"));
+        $cov->setDate($date);
+        $heure=new \DateTime($request->get("hDep"));
+        $cov->setHeureDep($heure);
         $cov->setLieuDep($request->get('lDep'));
         $cov->setLieuDest($request->get('lDest'));
         $cov->setDescription($request->get('desc'));
         $cov->setNbPlaces($request->get('nbr'));
         $p = $this->getDoctrine()->getManager()
             ->getRepository("FrontBundle:User")->find($request->get('cov'));
-
         $cov->setCovoitureur($p);
+        $v = $em->getRepository("CovoiturageBundle:Covoiturage")
+            ->find($request->get('voit'));
+        $cov->setVoiture($v);
+        var_dump($cov);
         $em->persist($cov);
         $em->flush();
         $serializer=new Serializer([new ObjectNormalizer()]);

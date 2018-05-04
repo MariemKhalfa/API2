@@ -25,3 +25,6 @@ user_register:
 user_loginMobile:
     path:  /loginMobile
     defaults: { _controller: FrontBundle:Default:loginMobile}
+user_register1:
+    path:  /registerMobile
+    defaults: { _controller: FrontBundle:Default:register1}

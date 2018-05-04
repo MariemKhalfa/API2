@@ -441,6 +441,8 @@ $voitures=new Garderies();
         $inscription->setNurserie($request->get('nurserie'));
         $inscription->setRepas($request->get('repas'));
         $inscription->setAdresse($request->get('adresse'));
+
+        $aa=$em->getRepository('MedecinBundle:Medecins')->Update2($request->get('idGarderie'));
         $inscription->setNomparent($parent);
         $em->persist($inscription);
         $em->flush();
@@ -463,6 +465,27 @@ $voitures=new Garderies();
         $serializer=new Serializer([new ObjectNormalizer()]);
         $formatted=$serializer->normalize($medecins);
         return new JsonResponse($formatted);
+    }
+
+    function  DetailsGarderies6Action(Request $request){
+        $medecin=new Medecins();
+        $em=$this->getDoctrine()->getManager();
+        $medecins=$em->getRepository('MedecinBundle:Medecins')->findSerieDQL6($request->get('adresse'),$request->get('nom'));
+        $serializer=new Serializer([new ObjectNormalizer()]);
+        $formatted=$serializer->normalize($medecins);
+        return new JsonResponse($formatted);
+    }
+    public function Rating2GarderiesAction()
+    {
+        $em=$this->getDoctrine()->getManager();
+        $garderies=$em->getRepository("GarderieBundle:Garderies")->First3Garderies();
+
+
+        $serializer=new Serializer([new ObjectNormalizer()]);
+        $formatted=$serializer->normalize($garderies);
+        return new JsonResponse($formatted);
+
+
     }
 
 }

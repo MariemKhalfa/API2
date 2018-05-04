@@ -2,6 +2,7 @@
 
 namespace FrontBundle\Controller;
 
+use FrontBundle\Entity\User;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
@@ -41,4 +42,24 @@ class DefaultController extends Controller
         }
         return new JsonResponse("Failed");
     }
+
+public function register1Action(Request $request){
+    $em=$this->getDoctrine()->getManager();
+    $user=new User();
+    $user->setNom($request->get('nom'));
+    $user->setPrenom($request->get('prenom'));
+    /*$user->setAdresse($request->get('adresse'));
+    $date=new \DateTime($request->get('date_naissance'));
+    $user->setDateNaissance($date);*/
+    $user->setTelephone($request->get('tel'));
+    $user->setVille($request->get('ville'));
+    $user->setEmail($request->get('mail'));
+    $user->setPassword($request->get('mdp'));
+    $user->setUsername($request->get('login'));
+    $em->persist($user);
+    $em->flush();
+    return new JsonResponse("Success");
+}
+
+
 }

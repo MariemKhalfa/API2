@@ -73,4 +73,21 @@ rechercher_Medecin:
 medecin2_details:
     path:     /detailsmedecin5
     defaults: { _controller: MedecinBundle:Medecin:DetailsMedecins5 }
-
+garderies6_details:
+    path:     /detailsgarderiespi
+    defaults: { _controller: MedecinBundle:Medecin:DetailsGarderies6 }
+garderies7_details:
+    path:     /RateRate
+    defaults: { _controller: MedecinBundle:Medecin:Rating2Garderies }
+publications_details:
+    path:     /mespubs
+    defaults: { _controller: MedecinBundle:Publication:allPublications }
+commentaires_details:
+    path:     /mescommentaires
+    defaults: { _controller: MedecinBundle:Publication:allCommentaires }
+commentaires_suppression:
+    path:     /supprimercommentaire
+    defaults: { _controller: MedecinBundle:Publication:SupprimerPublication }
+garderie_afficher7:
+    path:     /medecinsAll
+    defaults: { _controller: MedecinBundle:Medecin:allallMedecins}

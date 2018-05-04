@@ -28,9 +28,12 @@ class BabysittingController extends Controller
         $babysitting->setAdresse($request->get('adr'));
         $babysitting->setDescription($request->get('desc'));
         $babysitting->setNbrEnfants($request->get('nbr'));
+        /*$babysitting->setLatitude($request->get('lat'));
+        $babysitting->setLongitude($request->get('long'));*/
         $p = $this->getDoctrine()->getManager()
             ->getRepository("FrontBundle:User")->find($request->get('bab'));
         $babysitting->setBabysitteur($p);
+
         $em->persist($babysitting);
         $em->flush();
         $serializer=new Serializer([new ObjectNormalizer()]);
@@ -38,21 +41,31 @@ class BabysittingController extends Controller
         return new JsonResponse($formatted);
     }
 
-    public function findBabAction($id,$date)
+	  function deleteBabAction(Request $request,$id){
+
+        $em=$this->getDoctrine()->getManager();
+        $bab=$em->getRepository("BabysittingBundle:Babysitting")->find($id);
+        $em->remove($bab);
+        $em->flush();
+        $serializer=new Serializer([new ObjectNormalizer()]);
+        $formatted=$serializer->normalize($bab);
+        return new JsonResponse($formatted);
+    }
+    public function findBabAction($id)
     {
         $babysittings=$this->getDoctrine()->getManager()
-            ->getRepository('BabysittingBundle:Babysitting')
-            ->findDateBabysittings($id,$date);
+            ->getRepository('BabysittingBundle:Babysitting')->findBy($id);
+            //->findDateBabysittings($id,$date);
         $serializer=new Serializer([new ObjectNormalizer()]);
         $formatted=$serializer->normalize($babysittings);
         return new JsonResponse($formatted);
     }
 
-    public function allBabAction($id)
+    public function allBab1Action()
     {
         $babysittings=$this->getDoctrine()->getManager()
             ->getRepository('BabysittingBundle:Babysitting')
-            ->AutresBabysittings($id);
+            ->findAll();
         $serializer=new Serializer([new ObjectNormalizer()]);
         $formatted=$serializer->normalize($babysittings);
         return new JsonResponse($formatted);

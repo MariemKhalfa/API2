@@ -17,6 +17,14 @@ class CovoiturageRepository extends EntityRepository
             ->createQuery("SELECT c FROM CovoiturageBundle:Covoiturage c WHERE c.date > CURRENT_DATE()");
         return $result = $query->getResult();
     }
+
+
+    public function find1Covoiturages($id)
+    {
+        $query = $this->getEntityManager()
+            ->createQuery("SELECT c FROM CovoiturageBundle:Voiture c WHERE c.matricule=:id")->setParameter('id',$id);
+        return $result = $query->getResult();
+    }
     public function MesCovoiturages($id)
     {
         $query = $this->getEntityManager()

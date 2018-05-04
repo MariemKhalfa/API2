@@ -22,18 +22,18 @@ class Covoiturage
     private $id;
 
     /**
-     * @var \DateTime
-     *
-     * @ORM\Column(name="date", type="date", nullable=false)
-     */
-    private $date;
-    /**
      * @var string
      *
      * @ORM\Column(name="titre", type="string", length=255, nullable=true)
      */
     private $titre;
 
+    /**
+     * @var \DateTime
+     *
+     * @ORM\Column(name="date", type="date", nullable=false)
+     */
+    private $date;
 
     /**
      * @var integer
@@ -207,21 +207,7 @@ class Covoiturage
         $this->description = $description;
     }
 
-    /**
-     * @return string
-     */
-    public function getVoiture()
-    {
-        return $this->voiture;
-    }
 
-    /**
-     * @param string $voiture
-     */
-    public function setVoiture($voiture)
-    {
-        $this->voiture = $voiture;
-    }
 
     /**
      * @return mixed
@@ -249,5 +235,28 @@ class Covoiturage
     {
         return $this->id;
     }
-}
 
+    /**
+     * Set voiture
+     *
+     * @param \CovoiturageBundle\Entity\Voiture $voiture
+     *
+     * @return Covoiturage
+     */
+    public function setVoiture(\CovoiturageBundle\Entity\Voiture $voiture = null)
+    {
+        $this->voiture = $voiture;
+    
+        return $this;
+    }
+
+    /**
+     * Get voiture
+     *
+     * @return \CovoiturageBundle\Entity\Voiture
+     */
+    public function getVoiture()
+    {
+        return $this->voiture;
+    }
+}
