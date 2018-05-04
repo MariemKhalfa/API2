@@ -4,10 +4,15 @@ namespace EvenementBundle\Controller;
 
 use EvenementBundle\Entity\Evenement;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\BrowserKit\Response;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use EvenementBundle\Form\EvenementType;
 use EvenementBundle\Form\EvenementUpdateType;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
+use Symfony\Component\Serializer\Normalizer\ObjectNormalizer;
+use Symfony\Component\Serializer\Serializer;
+
 
 /**
  * Evenement controller.
@@ -112,5 +117,84 @@ class EvenementController extends Controller
 
 
     }
+
+
+    function listeAction(Request $request)
+    {
+
+
+
+        $evenement=$this->getDoctrine()->getRepository('EvenementBundle:Evenement')->findAll();
+
+        $em = $this->getDoctrine()->getManager();
+
+
+
+        $array = array();
+        foreach ($evenement as $e) {
+            $date = $e->getDate()->format('Y-m-d');
+
+
+            array_push($array,array(
+                "id" => $e->getId(),
+                "description" => $e->getDescription(),
+                "date" =>$date,
+                "adresse" => $e->getAdresse(),
+                "budget" => $e->getBudget(),
+                "nbParticipants" => $e->getNbParticipants(),
+                "categorie" => $e->getCategorie(),
+                "intitule" => $e->getIntitule(),
+                "image"=>$e->getImage(),
+
+
+
+            ));
+        }
+        $serializer = new Serializer([new ObjectNormalizer()]);
+
+        $jsonContent = $serializer->normalize($array);
+        return new \Symfony\Component\HttpFoundation\Response(json_encode($jsonContent));
+
+    }
+
+    public function searchAction(Request $request)
+    {
+        $evenement= new Evenement();
+        $content =$request->getContent();
+
+        $em = $this->getDoctrine()->getManager();
+        $event= $em->getRepository('EvenementBundle:Evenement')->findEvenement($request->get('key'));
+
+        $serializer = new Serializer([new ObjectNormalizer()]);
+        $jsonContent = $serializer->normalize($event);
+        return new \Symfony\Component\HttpFoundation\Response(json_encode($jsonContent));
+
+
+    }
+    public function addMAction(Request $request )
+    {
+        $em=$this->getDoctrine()->getManager();
+        $evenement=new Evenement();
+        $evenement->setIntitule($request->get('intitule'));
+        $evenement->setDescription($request->get('description'));
+        $evenement->setAdresse($request->get('adresse'));
+        $evenement->setNbParticipants($request->get('nbParticipants'));
+        $evenement->setBudget($request->get('budget'));
+        $evenement->setCategorie($request->get('categorie'));
+        $date= new \DateTime($request->get("date"));
+        $evenement->setDate($date);
+
+
+        $em->persist($evenement);
+        $em->flush();
+        $serializer=new Serializer([new ObjectNormalizer()]);
+        $formatted=$serializer->normalize($evenement);
+        return new JsonResponse($formatted);
+    }
+
+
+
+
+
 
 }
