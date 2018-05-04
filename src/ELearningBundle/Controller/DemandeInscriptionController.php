@@ -109,8 +109,21 @@ class DemandeInscriptionController extends Controller
     {
         $em = $this->getDoctrine();
         $Demande = $em->getRepository("ELearningBundle:DemandeInscription")->AllDemande($idm);
+        $array = array();
+        foreach ($Demande as $e) {
+            $date = $e->getDateDebut()->format('Y-m-d H:M:S');
+
+
+            array_push($array,array(
+                "id" => $e->getId(),
+                "descriptionDifficulte" => $e->getDescriptionDifficulte(),
+                "dateDebut" =>$date,
+                "etat" => $e->getEtat(),
+                "EnfantID" => $e->getEnfantId()->getPseudonyme(),
+            ));
+        }
         $Serializer= new Serializer([new ObjectNormalizer()]);
-        $formatted = $Serializer->normalize($Demande);
+        $formatted = $Serializer->normalize($array);
         return new JsonResponse($formatted);
     }
 }
