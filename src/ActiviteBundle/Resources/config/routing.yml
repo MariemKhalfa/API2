@@ -6,16 +6,23 @@ activite_viewActivite:
     path:     /activite/view
     defaults: { _controller: ActiviteBundle:Activite:afficheBack }
 
-
-activite_detailsActivite:
-    path:     /activite/details
-    defaults: { _controller: ActiviteBundle:Activite:ActiviteDetails }
-
-
 activite_list:
+    path:     /activite/list
+    defaults: { _controller: ActiviteBundle:Activite:list }
+
+
+activite_search:
+    path:     /activite/search/{key}
+    defaults: { _controller: ActiviteBundle:Activite:listAll}
+
+
+activite_liste:
     path:     /activite/liste
     defaults: { _controller: ActiviteBundle:Activite:listFront }
 
+activite_essay:
+    path:     /activite/ajout
+    defaults: { _controller: ActiviteBundle:Activite:newAct }
 
 activite_createActivite:
     path:     /activite/create
@@ -44,6 +51,18 @@ activite_deleteActivite:
 activite_afficherFrontctivite:
     path:     /activite/affich
     defaults: { _controller: ActiviteBundle:Activite:viewActivite }
+
+
+activite_show:
+    path:     /activite/show/{id}
+    defaults: { _controller: ActiviteBundle:Activite:showActivite }
+
+activite_shw:
+    path:     /activite/showi/{id}
+    defaults: { _controller: ActiviteBundle:Activite:DetailsActivite }
+
+
+
 
 
 
