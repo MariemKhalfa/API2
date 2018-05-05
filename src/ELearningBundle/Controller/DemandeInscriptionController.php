@@ -130,10 +130,12 @@ class DemandeInscriptionController extends Controller
     {
         $em = $this->getDoctrine();
         $em->getRepository("ELearningBundle:DemandeInscription")->AccepterDemande($id);
+        return new JsonResponse();
     }
     public function RefuserDemandeJsonAction($id)
     {
         $em = $this->getDoctrine();
         $em->getRepository("ELearningBundle:DemandeInscription")->RefuserDemande($id);
+        return new JsonResponse();
     }
 }
