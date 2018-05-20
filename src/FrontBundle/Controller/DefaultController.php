@@ -56,6 +56,7 @@ public function register1Action(Request $request){
     $user->setEmail($request->get('mail'));
     $user->setPassword($request->get('mdp'));
     $user->setUsername($request->get('login'));
+    $user->setRoles(array($request->get('roles'),));
     $em->persist($user);
     $em->flush();
     return new JsonResponse("Success");
